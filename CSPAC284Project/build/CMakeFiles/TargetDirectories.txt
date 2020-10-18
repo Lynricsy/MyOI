@@ -1,0 +1,9 @@
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/Experimental.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/Continuous.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/Nightly.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/CSPAC284.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/PACKAGE.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Lenovo/MyOI/CSPAC284Project/build/CMakeFiles/ZERO_CHECK.dir

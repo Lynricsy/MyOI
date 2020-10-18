@@ -1,0 +1,3 @@
+C:/Users/Lenovo/MyOI/CSPAC285new/cmake-build-debug/CMakeFiles/CSPAC285new.dir
+C:/Users/Lenovo/MyOI/CSPAC285new/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Lenovo/MyOI/CSPAC285new/cmake-build-debug/CMakeFiles/rebuild_cache.dir
