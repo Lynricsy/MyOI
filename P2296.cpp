@@ -208,7 +208,21 @@ void DFS(int start)
 
 void check()
 {
-	
+	for(int i=1;i<=totN;i++)
+	{
+		int flag;
+		if(candy[i])
+		{
+			flag=true;
+			for(int j=head[i];j;j=edges[j].nxt)
+			{
+				if(!candy[edges[j].to])
+				{
+					flag=
+				}
+			}
+		}
+	}
 }
 
 int main()
