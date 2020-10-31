@@ -113,22 +113,33 @@ inline void write(double x, int k)
     for (i = p; i > 0; i--)
         putchar(bit[i] + 48);
 }
+void clearStack(stack<int> &s)
+{
+    stack<int>().swap(s);
+}
+void clearVector(vector<int> &s)
+{
+    vector<int>().swap(s);
+}
 
 int totN;
 int totM;
 
 struct Edge
 {
-	int val;
+	long long val;
 	int nxt;
 	int to;
 }edges[100090];
 int head[100090];
-int cnt_edges,cnt_notedges;
+int cnt_edges;
 int dfn[100090];
 bool ins[100090];
 vector<int> SCC;
-
+stack<int> Sta;
+int dfscnt;
+int cntSCC;
+int low[100090];
 
 void add_edge(int x,int y,int z)
 {
@@ -138,13 +149,71 @@ void add_edge(int x,int y,int z)
 	edges[cnt_edges].to=y;
 	edges[cnt_edges].val=z;
 }
+
+bool Tarjian(int nowX,int numm)
+{
+	dfn[nowX]=low[nowX]=++dfscnt;
+	Sta.push(nowX);
+	ins[nowX]=true;
+	for(int i=head[nowX];i;i=edges[i].nxt)
+	{
+		if(edges[i].val>numm)
+		{
+			continue;
+		}
+		if(ins[edges[i].to])
+		{
+			low[nowX]=min(low[nowX],dfn[edges[i].to]);
+		}
+		else if(!dfn[edges[i].to])
+		{
+			Tarjian(edges[i].to,numm);
+			low[nowX]=min(low[nowX],low[edges[i].to]);
+		}
+	}
+	if(dfn[nowX]=low[nowX])
+	{
+		int y;
+		cntSCC++;
+		if(cntSCC>1)
+		{
+			return false;
+		}
+		do
+		{
+			y=Sta.top();
+			Sta.pop();
+			ins[y]=false;
+		}while(nowX!=y);
+	}
+	if(cntSCC<=1)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 bool check(long long checknum)
 {
-	
-}
-void Tarjian(int nowX)
-{
-	
+	memset(dfn,0,sizeof(dfn));
+	memset(ins,0,sizeof(ins));
+	clearStack(Sta);
+	clearVector(SCC);
+	dfscnt=0;
+	cntSCC=0;
+	for(int i=1;i<=totN;++i)
+	{
+		if(!dfn[i])
+		{
+			if(!Tarjian(i,checknum))
+			{
+				return false;
+			}
+		}
+	}
+	return true;
 }
 
 long long L,R=9999999999;
@@ -160,17 +229,27 @@ int main()
 		int y=read();
 		int z=read();
 		add_edge(x,y,z);
-		add_notedge(y,x,z);
 	}
 	while(L<=R)
 	{
 		Mid=(L+R)>>2;
 		if(check(Mid))
 		{
-			
+			R=Mid+1;
+		}
+		else
+		{
+			L=Mid;
 		}
 	}
-	
+	if(L==9999999999)
+	{
+		write(-1);
+	}
+	else
+	{
+		write(L);
+	}
     return 0;
 } //LikiBlaze Code
 

@@ -114,24 +114,20 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-
-double sum[1000090];
+long long nums[2000090]; 
+long long totN;
 
 int main()
 {
 	totN=read();
-	for (int i=1;i<=totN;i++)
+	for(int i=1;i<=totN;i++)
 	{
-		sum[i]=sum[i-1]+log(i);
-	}	
-	for (int a=1;a<=totN;a++)
-	{
-		if (sum[a] >= sum[totN]-sum[a])
-		{
-			printf("%d\n",a);
-			break;
-		}
+		nums[i]=i;
 	}
-	return 0;
+	for(int i=1;i<=totN;i++)
+	{
+		
+	}
+    return 0;
 } //LikiBlaze Code
+
