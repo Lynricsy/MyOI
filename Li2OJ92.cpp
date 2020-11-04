@@ -114,82 +114,46 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-long long MOD;
+int totN;
+int totK;
+long long nums[10090],presum[10090];
+long long totANS;
 
-long long ultra_quick_pow(long long a,long long b)
+void DFS(int nowPOS,int nowTOT)
 {
-	long long base=a;
-	long long result=1;
-	while(b)
+	if(nowTOT>totK)
 	{
-		if(b&1)
-		{
-			result*=base;
-			result%=MOD;
-		}
-		b>>=1;
-		base*=base;
-		base%=MOD;
+		return;
 	}
-	return result;
-}
-
-long long A;
-long long B;
-
-bool check[100000001]={0};
-int prime[1000001];
-int cnt=0;
-
-void getprime(long long n)
-{
-	check[1]=1;
-	for(int i=2;i<=n;i++)
+	if(presum[nowPOS-1]+nowTOT<=totK)
 	{
-		if(!check[i])
-		{
-			prime[cnt++]=i;
-		}
-		for(int j=0;j<cnt&&i*prime[j]<100000001;j++)
-		{
-			check[i*prime[j]]=1;
-			if(i%prime[j]==0)
-			{
-				break;
-			}
-		}
+		totANS=max(nowTOT+presum[nowPOS-1],totANS);
+		return;
 	}
-}
-
-long long phi(long long x){
-	long long ans=1;
-	for(long long i=2;i*i<=x;i++){
-		if(x%i==0)ans*=(i-1),x/=i;
-		while(x%i==0)x/=i,ans*=i;
-	}
-	return ans*max(x-1,1LL);
-}
-
-long long getphi(long long num)
-{
-	long long result;
-	int aa=0;
-	while(prime[aa]<=num)
+	DFS(nowPOS-1,nowTOT);
+	if(nowTOT+nums[nowPOS-1]<=totK)
 	{
-		if(!(num%prime[aa]))
-		{
-			num=num/prime[aa]*(prime[aa]-1);
-		}
-		aa++;
+		totANS=max(totANS,nowTOT+nums[nowPOS-1]);
+		DFS(nowPOS-1,nowTOT+nums[nowPOS-1]);
 	}
-	return num;
 }
 
 int main()
 {
-	A=read();
-	MOD=read();
-	write(MOD*phi(MOD)+A);
+	totK=read();
+	totN=read();
+	for(int i=1;i<=totN;++i)
+	{
+		nums[i]=read();
+		presum[i]=presum[i-1]+nums[i];
+	}
+	if(!totN)
+	{
+		putchar('0');
+		return 0;
+	}
+	DFS(totN+1,0);
+	write(totANS);
     return 0;
 } //ROSMONTIS Code
 

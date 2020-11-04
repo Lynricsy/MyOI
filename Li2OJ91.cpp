@@ -114,82 +114,17 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-long long MOD;
-
-long long ultra_quick_pow(long long a,long long b)
-{
-	long long base=a;
-	long long result=1;
-	while(b)
-	{
-		if(b&1)
-		{
-			result*=base;
-			result%=MOD;
-		}
-		b>>=1;
-		base*=base;
-		base%=MOD;
-	}
-	return result;
-}
-
-long long A;
-long long B;
-
-bool check[100000001]={0};
-int prime[1000001];
-int cnt=0;
-
-void getprime(long long n)
-{
-	check[1]=1;
-	for(int i=2;i<=n;i++)
-	{
-		if(!check[i])
-		{
-			prime[cnt++]=i;
-		}
-		for(int j=0;j<cnt&&i*prime[j]<100000001;j++)
-		{
-			check[i*prime[j]]=1;
-			if(i%prime[j]==0)
-			{
-				break;
-			}
-		}
-	}
-}
-
-long long phi(long long x){
-	long long ans=1;
-	for(long long i=2;i*i<=x;i++){
-		if(x%i==0)ans*=(i-1),x/=i;
-		while(x%i==0)x/=i,ans*=i;
-	}
-	return ans*max(x-1,1LL);
-}
-
-long long getphi(long long num)
-{
-	long long result;
-	int aa=0;
-	while(prime[aa]<=num)
-	{
-		if(!(num%prime[aa]))
-		{
-			num=num/prime[aa]*(prime[aa]-1);
-		}
-		aa++;
-	}
-	return num;
-}
+int totN;
+int nums[100090];
 
 int main()
 {
-	A=read();
-	MOD=read();
-	write(MOD*phi(MOD)+A);
+	totN=read();
+	for(int i=1;i<=totN;++i)
+	{
+		nums[i]=read();
+	}
+	
     return 0;
 } //ROSMONTIS Code
 
