@@ -114,30 +114,65 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-int totS;
+long long totN;
+long long totL;
+long long totK;
 long long nums[100090];
-long long sums[100090];
-long long totANS;
+long long L,R;
+long long Mid;
+
+bool check(int checknum)
+{
+	int cnt=0;
+	for(long long i=2;i<=totN;++i)
+	{
+		if(nums[i]-nums[i-1]>checknum)
+		{
+			cnt+=(nums[i]-nums[i-1])/checknum;
+			if((nums[i]-nums[i-1])%checknum==0)
+			{
+				--cnt;
+			}
+			if(cnt>totK)
+			{
+				return false;
+			}
+		}
+	}
+	if(cnt<=totK)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 int main()
 {
+	totL=read();
 	totN=read();
-	totS=read();
-	for(int i=1;i<=totN;++i)
+	totK=read();
+	for(long long i=1;i<=totN;++i)
 	{
 		nums[i]=read();
-		sums[i]=sums[i-1]+nums[i];
 	}
-	totANS=nums[1];
-	for(int i=1;i<=totN;++i)
+	L=0;
+	R=totL;
+	while(L<R)
 	{
-		for(int j=max(0,i-totS-1);j<=i;++j)
+		Mid=(L+R)/2;
+		if(check(Mid))
 		{
-			totANS=max(totANS,nums[i]*(sums[i-1]-sums[j]));
+			R=Mid;
+		}
+		else
+		{
+			L=Mid+1;
 		}
 	}
-	write(totANS);
+	write(L);
     return 0;
 } //ROSMONTIS Code
 

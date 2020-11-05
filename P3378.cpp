@@ -114,30 +114,39 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-int totS;
-long long nums[100090];
-long long sums[100090];
-long long totANS;
+int totQ;
+struct notint
+{
+	int num;
+};
+bool operator<(notint a,notint b)
+{
+	return a.num>b.num;
+}
+priority_queue<notint> Q;
+char tempchar;
 
 int main()
 {
-	totN=read();
-	totS=read();
-	for(int i=1;i<=totN;++i)
+	totQ=read();
+	while(totQ--)
 	{
-		nums[i]=read();
-		sums[i]=sums[i-1]+nums[i];
-	}
-	totANS=nums[1];
-	for(int i=1;i<=totN;++i)
-	{
-		for(int j=max(0,i-totS-1);j<=i;++j)
+		cin>>tempchar;
+		if(tempchar=='1')
 		{
-			totANS=max(totANS,nums[i]*(sums[i-1]-sums[j]));
+			int x=read();
+			Q.push({x});
+		}
+		else if(tempchar=='2')
+		{
+			write(Q.top().num);
+			putchar('\n');
+		}
+		else
+		{
+			Q.pop();
 		}
 	}
-	write(totANS);
     return 0;
 } //ROSMONTIS Code
 

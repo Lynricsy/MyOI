@@ -114,30 +114,62 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
+int totT;
 int totN;
-int totS;
-long long nums[100090];
-long long sums[100090];
-long long totANS;
+int startRAT;
+int nums[100090];
+bool allflag;
+bool oneflag;
+long long nowsum;
 
 int main()
 {
-	totN=read();
-	totS=read();
-	for(int i=1;i<=totN;++i)
+	totT=read();
+	while(totT--)
 	{
-		nums[i]=read();
-		sums[i]=sums[i-1]+nums[i];
-	}
-	totANS=nums[1];
-	for(int i=1;i<=totN;++i)
-	{
-		for(int j=max(0,i-totS-1);j<=i;++j)
+		totN=read();
+		startRAT=read();
+		allflag=1;
+		oneflag=0;
+		nowsum=0;
+		for(int i=1;i<=totN;++i)
 		{
-			totANS=max(totANS,nums[i]*(sums[i-1]-sums[j]));
+			nums[i]=read();
+			nowsum+=nums[i];
+			if(nums[i]!=startRAT)
+			{
+				allflag=0;
+			}
+			if(nums[i]==startRAT)
+			{
+				oneflag=true;
+			}
+		}
+		if(allflag)
+		{
+			putchar('0');
+			putchar('\n');
+			continue;
+		}
+		else if(oneflag)
+		{
+			putchar('1');
+			putchar('\n');
+			continue;
+		}
+		else if(startRAT*totN==nowsum)
+		{
+			putchar('1');
+			putchar('\n');
+			continue;
+		}
+		else
+		{
+			putchar('2');
+			putchar('\n');
+			continue;
 		}
 	}
-	write(totANS);
     return 0;
 } //ROSMONTIS Code
 

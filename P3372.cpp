@@ -114,30 +114,65 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-int totS;
-long long nums[100090];
-long long sums[100090];
-long long totANS;
+int nums[100090];
+
+struct Node
+{
+	Node *lch,*rch;
+	int val;
+	int tag;
+	int l,r;
+	Node(int L,int R)
+	{
+		l=L;
+		r=R;
+		if(l==r)
+		{
+			val=nums[l];
+			tag=0;
+		}
+		else
+		{
+			int midd=(L+R)>>1;
+			*lch=new Node(l,mid);
+			*rch=new Node(mid+1,r);
+		}
+		push_up();
+	}
+	void push_up()
+	{
+		val=lch->val+rch->val;
+	}
+	void in_range(int L,int R)
+	{
+		return (l<=L)&&(R<=r);
+	}
+	void out_of_range(int L,int R)
+	{
+		return (L>r)||(R<l);
+	}
+	void update(int L,int R,int w)
+	{
+		if(in_range(L,R))
+		{
+			tag+=w;
+		}
+		else
+		{
+			update(L,(L+R)>>1);
+			update(((L+R)>>1)+1,R);
+		}
+	}
+	void push_down()
+	{
+		val+=tag;
+		
+	}
+}
 
 int main()
 {
-	totN=read();
-	totS=read();
-	for(int i=1;i<=totN;++i)
-	{
-		nums[i]=read();
-		sums[i]=sums[i-1]+nums[i];
-	}
-	totANS=nums[1];
-	for(int i=1;i<=totN;++i)
-	{
-		for(int j=max(0,i-totS-1);j<=i;++j)
-		{
-			totANS=max(totANS,nums[i]*(sums[i-1]-sums[j]));
-		}
-	}
-	write(totANS);
+
     return 0;
 } //ROSMONTIS Code
 

@@ -114,9 +114,278 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
+int totN;
+int totM;
+char nums[2][100090];
+char lies[100090];
+
+char findnum(int x,int y,int z)
+{
+	if(x==0&&y==1&&z==2)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==2)
+	{
+		return 2;
+	}
+	if(x==1&&y==1&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==1)
+	{
+		return 1;
+	}
+	if(x==2&&y==2&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==0)
+	{
+		return 3;
+	}
+	if(x==1&&y==1&&z==1)
+	{
+		return 2;
+	}
+	if(x==2&&y==2&&z==2)
+	{
+		return 1;
+	}
+	if(x==3&&y==3&&z==3)
+	{
+		return 0;
+	}
+	swap(x,y);
+	if(x==0&&y==1&&z==2)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==2)
+	{
+		return 2;
+	}
+	if(x==1&&y==1&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==1)
+	{
+		return 1;
+	}
+	if(x==2&&y==2&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==0)
+	{
+		return 3;
+	}
+	if(x==1&&y==1&&z==1)
+	{
+		return 2;
+	}
+	if(x==2&&y==2&&z==2)
+	{
+		return 1;
+	}
+	if(x==3&&y==3&&z==3)
+	{
+		return 0;
+	}
+	swap(y,z);
+	if(x==0&&y==1&&z==2)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==2)
+	{
+		return 2;
+	}
+	if(x==1&&y==1&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==1)
+	{
+		return 1;
+	}
+	if(x==2&&y==2&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==0)
+	{
+		return 3;
+	}
+	if(x==1&&y==1&&z==1)
+	{
+		return 2;
+	}
+	if(x==2&&y==2&&z==2)
+	{
+		return 1;
+	}
+	if(x==3&&y==3&&z==3)
+	{
+		return 0;
+	}
+	swap(x,y);
+	if(x==0&&y==1&&z==2)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==2)
+	{
+		return 2;
+	}
+	if(x==1&&y==1&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==1)
+	{
+		return 1;
+	}
+	if(x==2&&y==2&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==0)
+	{
+		return 3;
+	}
+	if(x==1&&y==1&&z==1)
+	{
+		return 2;
+	}
+	if(x==2&&y==2&&z==2)
+	{
+		return 1;
+	}
+	if(x==3&&y==3&&z==3)
+	{
+		return 0;
+	}
+	swap(x,z);
+	if(x==0&&y==1&&z==2)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==2)
+	{
+		return 2;
+	}
+	if(x==1&&y==1&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==1)
+	{
+		return 1;
+	}
+	if(x==2&&y==2&&z==3)
+	{
+		return 3;
+	}
+	if(x==0&&y==0&&z==0)
+	{
+		return 3;
+	}
+	if(x==1&&y==1&&z==1)
+	{
+		return 2;
+	}
+	if(x==2&&y==2&&z==2)
+	{
+		return 1;
+	}
+	if(x==3&&y==3&&z==3)
+	{
+		return 0;
+	}
+	cout<<"aaaaaaaaaaaaaaaaa"<<endl;
+	return rand()%3+1;
+}
+
+bool flag[10];
+
+int change(int a, int b, int c)
+{
+    for (int i = 0; i < 4; i++)
+        flag[i] = 0;
+    flag[a]++;
+    flag[b]++;
+    flag[c]++;
+    for (int i = 0; i < 4; i++)
+    {
+        if (flag[i] == 3)
+        {
+            return 3 - i;
+        }
+        if (flag[i] == 2)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (flag[j] == 1)
+                {
+                    if (1 + j == 3)
+                       return i;
+                    else
+                        return j;
+                }
+            }
+        }
+    }
+}
+
+
+
+bool nowpos;
+
 int main()
 {
-
+	totN=read();
+	totM=read();
+	for(int i=1;i<=totM;++i)
+	{
+		nums[0][i]=read();
+	}
+	lies[1]=nums[0][1];
+	for(int i=2;i<=totN;++i)
+	{
+		lies[i]=read();
+	}
+	for(int i=2;i<=totN;++i)
+	{
+		nums[nowpos^1][1]=lies[i];
+		for(int j=2;j<=totM;++j)
+		{
+			nums[nowpos^1][j]=change(nums[nowpos][j-1],nums[nowpos][j],nums[nowpos^1][j-1]);
+		}
+		nowpos^=1;
+	}
+	if(nums[nowpos][totM]==0)
+	{
+		putchar('H');
+		putchar('S');
+	}
+	if(nums[nowpos][totM]==1)
+	{
+		putchar('T');
+		putchar('S');
+	}
+	if(nums[nowpos][totM]==2)
+	{
+		putchar('H');
+		putchar('P');
+	}
+	if(nums[nowpos][totM]==3)
+	{
+		putchar('T');
+		putchar('P');
+	}
     return 0;
 } //ROSMONTIS Code
 

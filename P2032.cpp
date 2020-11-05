@@ -115,29 +115,41 @@ inline void write(double x, int k)
 }
 
 int totN;
-int totS;
-long long nums[100090];
-long long sums[100090];
-long long totANS;
+int totK;
+struct material
+{
+	int time;
+	int num;
+}things[1000090];
+deque<material> Q;
 
 int main()
 {
 	totN=read();
-	totS=read();
+	totK=read();
 	for(int i=1;i<=totN;++i)
 	{
-		nums[i]=read();
-		sums[i]=sums[i-1]+nums[i];
+		things[i].num=read();
+		things[i].time=i;
 	}
-	totANS=nums[1];
+	Q.push_back(things[1]);
 	for(int i=1;i<=totN;++i)
 	{
-		for(int j=max(0,i-totS-1);j<=i;++j)
+		if(!Q.empty()&&Q.front().time<=i-totK)
 		{
-			totANS=max(totANS,nums[i]*(sums[i-1]-sums[j]));
+			Q.pop_front();
+		}
+		while(!Q.empty()&&Q.back().num<=things[i].num)
+		{
+			Q.pop_back();
+		}
+		Q.push_back(things[i]);
+		if(i>=totK)
+		{
+			write(Q.front().num);
+			putchar('\n');
 		}
 	}
-	write(totANS);
     return 0;
 } //ROSMONTIS Code
 
