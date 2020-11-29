@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "clang++-10 - 生成和调试活动文件",
+            "name": "g++ - 生成和调试活动文件",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -22,8 +22,8 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: clang++-10 build active file",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "preLaunchTask": "C/C++: g++ build active file",
+            "miDebuggerPath": "/bin/gdb"
         }
     ]
 }
