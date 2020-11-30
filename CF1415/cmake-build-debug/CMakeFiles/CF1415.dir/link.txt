@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/CF1415.dir/main.cpp.o -o CF1415 

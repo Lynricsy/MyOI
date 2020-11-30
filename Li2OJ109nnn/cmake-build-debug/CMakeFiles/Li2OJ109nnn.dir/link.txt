@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -rdynamic CMakeFiles/Li2OJ109nnn.dir/main.cpp.o -o Li2OJ109nnn 

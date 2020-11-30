@@ -1,3 +1,19 @@
 {
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "regex": "cpp",
+        "ranges": "cpp",
+        "*.tcc": "cpp",
+        "rope": "cpp",
+        "fstream": "cpp",
+        "*.inc": "cpp",
+        "bitset": "cpp",
+        "optional": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp",
+        "istream": "cpp",
+        "numeric": "cpp",
+        "streambuf": "cpp",
+        "valarray": "cpp"
+    }
 }
