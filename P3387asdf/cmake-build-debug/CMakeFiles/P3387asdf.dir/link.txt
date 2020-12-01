@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/P3387asdf.dir/main.cpp.o -o P3387asdf 

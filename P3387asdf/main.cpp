@@ -85,9 +85,9 @@ inline void dwrite(long long x)
         return;
     }
     int bit[20], p = 0, i;
-    for (; x; x /= 10) 
+    for (; x; x /= 10)
         bit[++p] = x % 10;
-    for (i = p; i > 0; --i) 
+    for (i = p; i > 0; --i)
         putchar(bit[i] + 48);
 }
 inline void write(double x,int k)
@@ -97,7 +97,7 @@ inline void write(double x,int k)
     {
         putchar('0');
         putchar('.');
-        for (int i = 1; i <= k; ++i) 
+        for (int i = 1; i <= k; ++i)
             putchar('0');
         return;
     }
@@ -106,77 +106,63 @@ inline void write(double x,int k)
     x = (long long) x;
     dwrite(x), putchar('.');
     int bit[10], p = 0, i;
-    for (; p < k; y /= 10) 
+    for (; p < k; y /= 10)
         bit[++p] = y % 10;
-    for (i = p; i > 0; i--) 
+    for (i = p; i > 0; i--)
         putchar(bit[i] + 48);
 }
 
 long long totN;
-long long rot;
-long long totQ;
-long long fath[100090][33];
+long long totM;
 struct Edge
 {
-    long long nxt;
-    long long to;
+    int nxt;
+    int to;
 }edges[100090];
-long long cnt_edges;
-long long head[100090];
-long long deepth[100090];
-int lg[100090];
-void add_edge(long long a,long long b)
+int head[100090];
+int cnt_edges;
+int dfn[100090];
+bool ins[100090];
+stack<int> S;
+vector<int> V[100090];
+int low[100090];
+int dfs_cnt;
+void add_edges(int x,int y)
 {
     ++cnt_edges;
-    edges[cnt_edges].nxt=head[a];
-    head[a]=cnt_edges;
-    edges[cnt_edges].to=b;
+    edges[cnt_edges].nxt=head[x];
+    head[x]=cnt_edges;
+    edges[cnt_edges].to=y;
 }
-void DFS(long long nowX,long long fa)
+void Tarjian(int nowX)
 {
-    fath[nowX][0]=fa;
-    deepth[nowX]=deepth[fa]+1;
-    for (int i = 1; i <= lg[deepth[nowX]]; i++)
+    ++dfs_cnt;
+    dfn[nowX]=low[nowX]=dfs_cnt;
+    for (int i = head[nowX] ; i ; i=edges[i].nxt)
     {
-        fath[nowX][i]=fath[fath[nowX][i-1]][i-1];
-    }
-    for (int i = head[nowX]; i ; i=edges[i].nxt)
-    {
-        if(edges[i].to==fa)
+        if(!dfn[edges[i].to])
         {
-            continue;
+            
         }
-        DFS(edges[i].to,nowX);
     }
-}
-
-void LCA(long long x,long long y)
-{
-    if(deepth[x]<deepth[y])
-    {
-        swap(x,y);
-    }
-    while (deepth[x]>deepth[y])
-    {
-        x=fath[x][]
-    }
-    
 }
 
 int main()
 {
     totN=read();
-    totQ=read();
-    rot=read();
-    for (int i = 1; i <= totN-1; i++)
+    totM=read();
+    for (int i = 1,x,y; i <= totM; ++i)
     {
-        int x=read();
-        int y=read();
-        add_edge(x,y);
+        x=read();
+        y=read();
+        add_edges(x,y);
     }
-    for(int i = 1; i <= totN; ++i)
+    for (int i = 1; i <= totN; ++i)
     {
-        lg[i] = lg[i-1] + (1 << lg[i-1] == i); 
+        if(!dfn[i])
+        {
+            Tarjian(i);
+        }
     }
     return 0;
 }//LikiBlaze Code
