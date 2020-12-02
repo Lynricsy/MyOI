@@ -134,6 +134,7 @@ void add_edges(int x,int y)
     edges[cnt_edges].to=y;
 }
 
+
 int main()
 {
     totN=read();
