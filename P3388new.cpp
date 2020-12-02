@@ -125,6 +125,10 @@ struct Edge
 int cnt_edges;
 int dfn[100090];
 int low[100090];
+int dfs_cnt;
+bool ins[100090];
+stack<int> S;
+priority_queue<int, vector<int>, greater<int> > Q;
 
 void add_edges(int x,int y)
 {
@@ -133,7 +137,36 @@ void add_edges(int x,int y)
     head[x]=cnt_edges;
     edges[cnt_edges].to=y;
 }
-
+void Tarjian(long long nowX)
+{
+    ++dfs_cnt;
+    dfn[nowX]=low[nowX]=dfs_cnt;
+    S.push(nowX);
+    ins[nowX]=true;
+    for (int i = head[nowX]; i ; i=edges[i].nxt)
+    {
+        if(!dfn[edges[i].to])
+        {
+            Tarjian(edges[i].to);
+            low[nowX]=min(low[nowX],low[edges[i].to]);
+        }
+        else if (ins[edges[i].to])
+        {
+            low[nowX]=min(low[nowX],dfn[edges[i].to]);
+        }
+    }
+    if(dfn[nowX]==low[nowX])
+    {
+        int y;
+        do
+        {
+            y=S.top();
+            ins[y]=false;
+            S.pop();
+        } while (y!=nowX);
+        
+    }
+}
 
 int main()
 {
@@ -145,6 +178,30 @@ int main()
         y=read();
         add_edges(x,y);
     }
-    
+    for (int i = 1; i <= totN; i++)
+    {
+        if(!dfn[i])
+        {
+            Tarjian(i);
+        }
+    }
+    for (int i = 1; i <= totN; i++)
+    {
+        for (int j = head[i]; j ; j=edges[j].nxt)
+        {
+            if (low[edges[j].to]>=dfn[i])
+            {
+                Q.push(i);
+            }
+        }
+    }
+    write(Q.size());
+    putchar(' ');
+    while (!Q.empty())
+    {
+        write(Q.top());
+        putchar(' ');
+        Q.pop();
+    }
     return 0;
 } //LikiBlaze Code
