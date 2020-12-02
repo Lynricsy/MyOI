@@ -114,8 +114,40 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
+long long totN;
+long long totM;
+long long totP;
+long long ANS;
+
+long long ultra_pow(long long num,long long ci)
+{
+    long long base=num;
+    long long result=1;
+    if (!num)
+    {
+        return 0;
+    }
+    while (ci)
+    {
+        if(ci&1)
+        {
+            result*=base;
+            result%=totP;
+        }
+        base*=base;
+        base%=totP;
+        ci>>=1;
+    }
+    return result%totP;
+}
+
 int main()
 {
-
+    totN=read();
+    totM=read();
+    totP=read();
+    ANS=ultra_pow(totN,totM);
+    printf("%d^%d mod %d=",totN,totM,totP);
+    write(ANS);
     return 0;
 } //LikiBlaze Code

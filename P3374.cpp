@@ -114,8 +114,45 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
+long long totN;
+long long nums[100090];
+long long nodes[100090];
+
+long long lowbit(long long x)
+{
+    return x&(-x);
+}
+void build()
+{
+    for (int i = 1; i <= totN; ++i)
+    {
+        nodes[i]=i;
+    }
+}
+void update(long long x,long long ad)
+{
+    for(;x<=totN;x+=lowbit(x))
+    {
+        nodes[x]+=ad;
+    }
+}
+long long query(long long x)
+{
+    long long ans;
+    for(;x;x-=lowbit(x))
+    {
+        ans+=nodes[x];
+    }
+    return ans;
+}
+
 int main()
 {
-
+    totN=read();
+    for (int i = 1; i <= totN; i++)
+    {
+        nums[i]=read();
+    }
+    
     return 0;
 } //LikiBlaze Code

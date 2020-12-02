@@ -127,6 +127,8 @@ stack<int> S;
 vector<int> V[100090];
 int low[100090];
 int dfs_cnt;
+int cnt_SCCs;
+int cnt_SCC_edges;
 void add_edges(int x,int y)
 {
     ++cnt_edges;
@@ -138,13 +140,37 @@ void Tarjian(int nowX)
 {
     ++dfs_cnt;
     dfn[nowX]=low[nowX]=dfs_cnt;
+    ins[nowX]=true;
     for (int i = head[nowX] ; i ; i=edges[i].nxt)
     {
         if(!dfn[edges[i].to])
         {
-            
+            Tarjian(edges[i].to);
+            low[nowX]=min(low[edges[i].to],low[nowX]);
+        } else if (ins[edges[i].to])
+        {
+            low[nowX]=min(dfn[edges[i].to],low[nowX]);
+        } else
+        {
+            continue;
         }
     }
+    if(dfn[nowX]==low[nowX])
+    {
+        int y=S.top();
+        ++cnt_SCCs;
+        do
+        {
+            V[cnt_SCCs].push_back(y);
+            ins[y]= false;
+            S.pop();
+            y=S.top();
+        }while (y!=nowX);
+    }
+}
+void add_SCC_edges(int x,int y)
+{
+
 }
 
 int main()
@@ -164,5 +190,7 @@ int main()
             Tarjian(i);
         }
     }
+
     return 0;
 }//LikiBlaze Code
+

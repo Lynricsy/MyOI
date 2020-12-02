@@ -114,8 +114,18 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
+set<string> S;
+int totN;
+string tmpstring;
+
 int main()
 {
-
+    totN=read();
+    for (int i = 1; i <= totN; i++)
+    {
+        cin>>tmpstring;
+        S.insert(tmpstring);
+    }
+    write(S.size());
     return 0;
 } //LikiBlaze Code
