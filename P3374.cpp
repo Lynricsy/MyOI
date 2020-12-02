@@ -115,20 +115,15 @@ inline void write(double x, int k)
 }
 
 long long totN;
-long long nums[100090];
-long long nodes[100090];
+long long totQ;
+long long nums[1000090];
+long long nodes[1000090];
 
 long long lowbit(long long x)
 {
     return x&(-x);
 }
-void build()
-{
-    for (int i = 1; i <= totN; ++i)
-    {
-        nodes[i]=i;
-    }
-}
+
 void update(long long x,long long ad)
 {
     for(;x<=totN;x+=lowbit(x))
@@ -136,23 +131,52 @@ void update(long long x,long long ad)
         nodes[x]+=ad;
     }
 }
+void build()
+{
+    for (int i = 1; i <= totN; ++i)
+    {
+        update(i,nums[i]);
+    }
+}
 long long query(long long x)
 {
-    long long ans;
+    long long ans=0;
     for(;x;x-=lowbit(x))
     {
         ans+=nodes[x];
     }
     return ans;
 }
+long long reunion(long long x,long long y)
+{
+    return query(y)-query(x-1);
+}
 
 int main()
 {
     totN=read();
+    totQ=read();
     for (int i = 1; i <= totN; i++)
     {
         nums[i]=read();
     }
-    
+    build();
+    for (int i = 1,tmpqst; i <= totQ; ++i)
+    {
+        tmpqst=read()-1;
+        if (!tmpqst)
+        {
+            int x=read();
+            int y=read();
+            update(x,y);
+        }
+        else
+        {
+            int x=read();
+            int y=read();
+            write(reunion(x,y));
+            putchar('\n');
+        }
+    }
     return 0;
 } //LikiBlaze Code
