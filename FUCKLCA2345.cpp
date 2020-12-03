@@ -115,16 +115,16 @@ inline void write(double x,int k)
 long long totN;
 long long rot;
 long long totQ;
-long long fath[100090][33];
+long long fath[1000090][33];
 struct Edge
 {
     long long nxt;
     long long to;
-}edges[100090];
+}edges[1000090];
 long long cnt_edges;
-long long head[100090];
-long long deepth[100090];
-int lg[100090];
+long long head[1000090];
+long long deepth[1000090];
+int lg[1000090];
 void add_edge(long long a,long long b)
 {
     ++cnt_edges;
@@ -150,7 +150,7 @@ void DFS(long long nowX,long long fa)
     }
 }
 
-void LCA(long long x,long long y)
+long long LCA(long long x,long long y)
 {
     if(deepth[x]<deepth[y])
     {
@@ -158,9 +158,21 @@ void LCA(long long x,long long y)
     }
     while (deepth[x]>deepth[y])
     {
-        x=fath[x][]
+        x=fath[x][lg[deepth[x]-deepth[y]]-1];
     }
-    
+    if (x==y)
+    {
+        return y;
+    }
+    for (int i = lg[deepth[x]] - 1; i >= 0; --i)
+    {
+        if (fath[x][i]!=fath[y][i])
+        {
+            x=fath[x][i];
+            y=fath[y][i];
+        }
+    }
+    return fath[x][0];
 }
 
 int main()
@@ -173,10 +185,20 @@ int main()
         int x=read();
         int y=read();
         add_edge(x,y);
+        add_edge(y,x);
     }
     for(int i = 1; i <= totN; ++i)
     {
         lg[i] = lg[i-1] + (1 << lg[i-1] == i); 
+    }
+    DFS(rot,0);
+    for (int i = 1; i <= totQ; i++)
+    {
+        int x,y;
+        x=read();
+        y=read();
+        write(LCA(x,y));
+        putchar('\n');
     }
     return 0;
 }//LikiBlaze Code
