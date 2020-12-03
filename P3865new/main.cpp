@@ -116,94 +116,55 @@ inline void write(double x, int k)
 
 long long totN;
 long long totQ;
-int head[500090];
-int rot;
-struct Edge
-{
-    int nxt;
-    int to;
-} edges[1000090];
-int cnt_edges;
-int lg[1000090];
-int fa[500090][35];
-int deepth[500090];
-void add_edge(int x, int y)
-{
-    ++cnt_edges;
-    edges[cnt_edges].nxt = head[x];
-    head[x] = cnt_edges;
-    edges[cnt_edges].to = y;
-}
+int lg[100090];
+int nums[100090];
+int LLC;
+int RES[100090][49];
+
 void getLOG()
 {
-    for (int i = 1; i <= totN; i++)
+    for (int i = 1; i <= 100090; i++)
     {
-        lg[i] = lg[i - 1] + (1 << lg[i - 1] == i);
+        lg[i]=lg[i-1]+(1<<lg[i-1]==i);
     }
+    for (int i = 1; i <= 100090; i++)
+    {
+        --lg[i];
+    }
+
 }
-int DFS(int nowX, int fath)
+void PRE()
 {
-    fa[nowX][0] = fath;
-    deepth[nowX] = deepth[fath] + 1;
-    for (int i = 1; i <= lg[deepth[nowX]]; i++)
+    for (int i = 1; i <= 21; i++)
     {
-        fa[nowX][i] = fa[fa[nowX][i - 1]][i - 1];
-    }
-    for (int i = head[nowX]; i; i = edges[i].nxt)
-    {
-        if (edges[i].to == fath)
+        for (int j = 1; i <= totN-(1<<i)+1; i++)
         {
-            continue;
-        }
-        DFS(edges[i].to, nowX);
-    }
-}
-int LCA(int x, int y)
-{
-    if (deepth[x] < deepth[y])
-    {
-        swap(x, y);
-    }
-    while (deepth[x] > deepth[y])
-    {
-        x = fa[x][lg[deepth[x] - deepth[y]] - 1];
-    }
-    if (x == y)
-    {
-        return x;
-    }
-    for (int i = lg[deepth[x]] - 1; i >= 0; --i)
-    {
-        if (fa[x][i] != fa[y][i])
-        {
-            x = fa[x][i];
-            y = fa[y][i];
+            RES[j][i]=max(RES[j][i-1],RES[j+(1<<(i-1))][i-1]);
         }
     }
-    return fa[x][0];
+}
+int query(int x,int y)
+{
+    int tmp=lg[y-x+1];
+    return max(RES[x][tmp],RES[y-(1<<tmp)+1][tmp]);
 }
 
 int main()
 {
-    totN = read();
-    totQ = read();
-    rot = read();
-    for (int i = 1; i <= totN - 1; i++)
+    totN=read();
+    totQ=read();
+    for (int i = 1; i <= totN; i++)
     {
-        int x, y;
-        x = read();
-        y = read();
-        add_edge(x, y);
-        add_edge(y, x);
+        RES[i][0]=read();
     }
     getLOG();
-    DFS(rot, 0);
+    PRE();
     for (int i = 1; i <= totQ; i++)
     {
-        int x, y;
-        x = read();
-        y = read();
-        write(LCA(x, y));
+        int x,y;
+        x=read();
+        y=read();
+        write(query(x,y));
         putchar('\n');
     }
     return 0;

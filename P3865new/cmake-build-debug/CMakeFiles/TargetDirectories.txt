@@ -1,0 +1,3 @@
+/home/likiblaze/MyOI/P3865new/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/likiblaze/MyOI/P3865new/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/likiblaze/MyOI/P3865new/cmake-build-debug/CMakeFiles/P3865new.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/P3865new.dir/main.cpp.o -o P3865new 
