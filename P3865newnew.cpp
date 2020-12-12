@@ -116,90 +116,39 @@ inline void write(double x, int k)
 
 long long totN;
 long long totQ;
-long long head[1000090];
-long long rot;
-struct Edge
+int nums[100090];
+long long RES[100090][49];
+
+void PRE_work()
 {
-    long long nxt;
-    long long to;
-}edges[1000090];
-long long cnt_edges;
-long long lg[1000090];
-long long fa[1000090][35];
-long long deepth[1000090];
-void add_edge(int x, int y)
-{
-    ++cnt_edges;
-    edges[cnt_edges].nxt = head[x];
-    head[x] = cnt_edges;
-    edges[cnt_edges].to = y;
-}
-int DFS(long long nowX, long long fath)
-{
-    fa[nowX][0] = fath;
-    deepth[nowX] = deepth[fath] + 1;
-    for (int i = 1; i <= lg[deepth[nowX]]; i++)
+    for (int i = 1; (1 << i) <= totN; i++)
     {
-        fa[nowX][i] = fa[fa[nowX][i - 1]][i - 1];
-    }
-    for (int i = head[nowX]; i; i = edges[i].nxt)
-    {
-        if (edges[i].to == fath)
+        for (int j = 1; j + (1 << i) - 1 <= totN; j++)
         {
-            continue;
-        }
-        DFS(edges[i].to, nowX);
-    }
-}
-int LCA(long long x, long long y)
-{
-    if (deepth[x] < deepth[y])
-    {
-        swap(x, y);
-    }
-    while (deepth[x] > deepth[y])
-    {
-        x = fa[x][lg[deepth[x] - deepth[y]] - 1];
-    }
-    if (x == y)
-    {
-        return y;
-    }
-    for (long long i = lg[deepth[x]] - 1; i >= 0; --i)
-    {
-        if (fa[x][i] != fa[y][i])
-        {
-            x = fa[x][i];
-            y = fa[y][i];
+            RES[j][i] = max(RES[j][i - 1], RES[j + (1 << i - 1)][i - 1]);
         }
     }
-    return fa[x][0];
+}
+int query(int l,int r)
+{
+    int tmp=(int)(log(r-l+1)/log(2));
+    return max(RES[l][tmp],RES[r-(1<<tmp)+1][tmp]);
 }
 
 int main()
 {
     totN = read();
     totQ = read();
-    rot = read();
-    for (long long i = 1; i <= totN - 1; i++)
+    for (int i = 1; i <= totN; ++i)
     {
-        long long x, y;
-        x = read();
-        y = read();
-        add_edge(x, y);
-        add_edge(y, x);
+        RES[i][0] = read();
     }
-    for (long long i = 1; i <= totN; ++i)
+    PRE_work();
+    for (int i = 1; i <= totQ; i++)
     {
-        lg[i] = lg[i - 1] + (1 << lg[i - 1] == i);
-    }
-    DFS(rot, 0);
-    for (long long i = 1; i <= totQ; i++)
-    {
-        long long x, y;
-        x = read();
-        y = read();
-        write(LCA(x, y));
+        int x=read();
+        int y=read();
+        write(query(x,y));
         putchar('\n');
     }
     return 0;

@@ -66,7 +66,7 @@ inline double dread()
     {
         x = x * 10 + c - '0';
     }
-readt:
+    readt:
     for (; c == '.'; c = getchar())
         ;
     for (; isdigit(c); c = getchar())
@@ -116,91 +116,113 @@ inline void write(double x, int k)
 
 long long totN;
 long long totQ;
-long long head[1000090];
-long long rot;
-struct Edge
+long long nums[100090];
+struct Node
 {
-    long long nxt;
-    long long to;
-}edges[1000090];
-long long cnt_edges;
-long long lg[1000090];
-long long fa[1000090][35];
-long long deepth[1000090];
-void add_edge(int x, int y)
-{
-    ++cnt_edges;
-    edges[cnt_edges].nxt = head[x];
-    head[x] = cnt_edges;
-    edges[cnt_edges].to = y;
-}
-int DFS(long long nowX, long long fath)
-{
-    fa[nowX][0] = fath;
-    deepth[nowX] = deepth[fath] + 1;
-    for (int i = 1; i <= lg[deepth[nowX]]; i++)
+    Node *lch, *rch;
+    long long tag;
+    long long val;
+    long long l, r;
+    Node(long long _l, long long _r)
     {
-        fa[nowX][i] = fa[fa[nowX][i - 1]][i - 1];
-    }
-    for (int i = head[nowX]; i; i = edges[i].nxt)
-    {
-        if (edges[i].to == fath)
+        l = _l;
+        r = _r;
+        tag = 0;
+        if (_l == _r)
         {
-            continue;
+            val = nums[_l];
+            lch = rch = NULL;
         }
-        DFS(edges[i].to, nowX);
-    }
-}
-int LCA(long long x, long long y)
-{
-    if (deepth[x] < deepth[y])
-    {
-        swap(x, y);
-    }
-    while (deepth[x] > deepth[y])
-    {
-        x = fa[x][lg[deepth[x] - deepth[y]] - 1];
-    }
-    if (x == y)
-    {
-        return y;
-    }
-    for (long long i = lg[deepth[x]] - 1; i >= 0; --i)
-    {
-        if (fa[x][i] != fa[y][i])
+        else
         {
-            x = fa[x][i];
-            y = fa[y][i];
+            tag = 0;
+            int Mid = (l + r) >> 1;
+            lch = new Node(l, Mid);
+            rch = new Node(Mid, r);
+            push_up();
         }
     }
-    return fa[x][0];
-}
+    void push_up()
+    {
+        val = lch->val + rch->val;
+    }
+    void maketag(long long w)
+    {
+        val += (r - l + 1) * w;
+        tag += w;
+    }
+    void push_down()
+    {
+        if (!tag)
+        {
+            return;
+        }
+        lch->maketag(tag);
+        rch->maketag(tag);
+        tag = 0;
+    }
+    bool in_range(long long _l, long long _r)
+    {
+        return (_l <= l) && (r <= _r);
+    }
+    bool out_of_range(long long _l,long long _r)
+    {
+        return (_r<=l)||(_l>=r);
+    }
+    void update(long long _l,long long _r,long long w)
+    {
+        if(in_range(_l,_r))
+        {
+            maketag(w);
+        }
+        else if (!out_of_range(_l,_r))
+        {
+            lch->update(_l,_r,w);
+            rch->update(_l,_r,w);
+            push_up();
+        }
+    }
+    long long query(long long _l,long long _r)
+    {
+        if(in_range(_l,_r))
+        {
+            return val;
+        }
+        if(out_of_range(_l,_r))
+        {
+            return 0;
+        }
+        push_down();
+        return lch->query(_l,_r)+rch->query(_l,_r);
+    }
+};
 
 int main()
 {
     totN = read();
     totQ = read();
-    rot = read();
-    for (long long i = 1; i <= totN - 1; i++)
+    for (int i = 1; i <= totN; i++)
     {
-        long long x, y;
-        x = read();
-        y = read();
-        add_edge(x, y);
-        add_edge(y, x);
+        nums[i] = read();
     }
-    for (long long i = 1; i <= totN; ++i)
+    Node *rot = new Node(1, totN);
+    for (int i = 1; i <= totQ; i++)
     {
-        lg[i] = lg[i - 1] + (1 << lg[i - 1] == i);
+        int tmp = read() - 1;
+        if (!tmp)
+        {
+            int x = read();
+            int y = read();
+            int z = read();
+            rot->update(x, y, z);
+        } else
+        {
+            int x = read();
+            int y = read();
+            write(rot->query(x, y));
+        }
+
     }
-    DFS(rot, 0);
-    for (long long i = 1; i <= totQ; i++)
-    {
-        long long x, y;
-        x = read();
-        y = read();
-        write(LCA(x, y));
-        putchar('\n');
-    }
+
     return 0;
 } //LikiBlaze Code

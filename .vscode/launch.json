@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            "args": ["--Wextra","--Wall"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

@@ -114,63 +114,72 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
+const long long maxN=20;
 long long totN;
 long long totQ;
-long long head[1000090];
-long long rot;
+int rot;
+int head[maxN];
+int cnt_edges;
+int lg[maxN];
 struct Edge
 {
-    long long nxt;
-    long long to;
-}edges[1000090];
-long long cnt_edges;
-long long lg[1000090];
-long long fa[1000090][35];
-long long deepth[1000090];
-void add_edge(int x, int y)
+    int nxt;
+    int to;
+}edges[maxN];
+int deepth[maxN];
+int fa[maxN][34];
+void add_edge(int x,int y)
 {
     ++cnt_edges;
-    edges[cnt_edges].nxt = head[x];
-    head[x] = cnt_edges;
-    edges[cnt_edges].to = y;
+    edges[cnt_edges].nxt=head[x];
+    head[x]=cnt_edges;
+    edges[cnt_edges].to=y;
 }
-int DFS(long long nowX, long long fath)
+void GetLog()
 {
-    fa[nowX][0] = fath;
-    deepth[nowX] = deepth[fath] + 1;
-    for (int i = 1; i <= lg[deepth[nowX]]; i++)
+    for (int i = 1; i <= totN; i++)
     {
-        fa[nowX][i] = fa[fa[nowX][i - 1]][i - 1];
+        lg[i]=lg[i-1]+(1<<lg[i-1]==i);
+        //lg[i]=log(i)/log(2)+1;
     }
-    for (int i = head[nowX]; i; i = edges[i].nxt)
+}
+void DFS(int x,int fath)
+{
+    deepth[x]=deepth[fath]+1;
+    fa[x][0]=fath;
+    for (int i = 1; i <= 33; i++)
     {
-        if (edges[i].to == fath)
+        fa[x][i]=fa[fa[x][i-1]][i-1];
+    }
+    for (int i = head[x]; i ; i=edges[i].nxt)
+    {
+        if(edges[i].to==fath)
         {
             continue;
         }
-        DFS(edges[i].to, nowX);
+        DFS(edges[i].to,x);
     }
 }
-int LCA(long long x, long long y)
+int LCA(int x,int y)
 {
-    if (deepth[x] < deepth[y])
+    if(deepth[x]<deepth[y])
     {
-        swap(x, y);
+        swap(x,y);
     }
-    while (deepth[x] > deepth[y])
+    while (deepth[x]>deepth[y])
     {
-        x = fa[x][lg[deepth[x] - deepth[y]] - 1];
+        x=fa[x][lg[deepth[x]-deepth[y]]-1];
     }
-    if (x == y)
+    if (x==y)
     {
-        return y;
+        return x;
     }
-    for (long long i = lg[deepth[x]] - 1; i >= 0; --i)
+    for (int i = lg[deepth[x]] - 1; i >= 0; --i)
     {
-        if (fa[x][i] != fa[y][i])
+        if(fa[x][i]!=fa[y][i])
         {
-            x = fa[x][i];
-            y = fa[y][i];
+            x=fa[x][i];
+            y=fa[y][i];
         }
     }
     return fa[x][0];
@@ -178,28 +187,23 @@ int LCA(long long x, long long y)
 
 int main()
 {
-    totN = read();
-    totQ = read();
-    rot = read();
-    for (long long i = 1; i <= totN - 1; i++)
+    totN=read();
+    totQ=read();
+    rot=read();
+    for (int i = 1; i <= totN-1; i++)
     {
-        long long x, y;
-        x = read();
-        y = read();
-        add_edge(x, y);
-        add_edge(y, x);
+        int x=read();
+        int y=read();
+        add_edge(x,y);
+        add_edge(y,x);
     }
-    for (long long i = 1; i <= totN; ++i)
+    GetLog();
+    DFS(rot,0);
+    for (int i = 1; i <= totQ; i++)
     {
-        lg[i] = lg[i - 1] + (1 << lg[i - 1] == i);
-    }
-    DFS(rot, 0);
-    for (long long i = 1; i <= totQ; i++)
-    {
-        long long x, y;
-        x = read();
-        y = read();
-        write(LCA(x, y));
+        int x=read();
+        int y=read();
+        write(LCA(x,y));
         putchar('\n');
     }
     return 0;

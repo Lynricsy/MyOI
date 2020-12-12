@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/P337220201203.dir/main.cpp.o -o P337220201203 
