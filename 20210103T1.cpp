@@ -7,7 +7,7 @@ inline long long read()
     long long x = 0;
     int f = 1;
     char ch = getchar();
-    while (ch < '0' || ch>'9')
+    while (ch < '0' || ch > '9')
     {
         if (ch == '-')
             f = -1;
@@ -20,7 +20,7 @@ inline long long read()
     }
     return x * f;
 }
-void write(const long long& x)
+void write(const long long &x)
 {
     if (!x)
     {
@@ -48,32 +48,33 @@ void write(const long long& x)
 inline double dread()
 {
     double r;
-    double x=0,t=0;
-    int s=0,f=1;
-    char c=getchar();
-    for (;!isdigit(c);c=getchar())
+    double x = 0, t = 0;
+    int s = 0, f = 1;
+    char c = getchar();
+    for (; !isdigit(c); c = getchar())
     {
-        if (c=='-')
+        if (c == '-')
         {
-            f=-1;
+            f = -1;
         }
-        if (c=='.')
+        if (c == '.')
         {
             goto readt;
         }
     }
-    for (;isdigit(c)&&c!='.';c=getchar())
+    for (; isdigit(c) && c != '.'; c = getchar())
     {
-        x=x*10+c-'0';
+        x = x * 10 + c - '0';
     }
-    readt:
-    for (;c=='.';c=getchar());
-    for (;isdigit(c);c=getchar())
+readt:
+    for (; c == '.'; c = getchar())
+        ;
+    for (; isdigit(c); c = getchar())
     {
-        t=t*10+c-'0';
+        t = t * 10 + c - '0';
         ++s;
     }
-    r=(x+t/pow(10,s))*f;
+    r = (x + t / pow(10, s)) * f;
     return r;
 }
 
@@ -85,25 +86,26 @@ inline void dwrite(long long x)
         return;
     }
     int bit[20], p = 0, i;
-    for (; x; x /= 10) 
+    for (; x; x /= 10)
         bit[++p] = x % 10;
-    for (i = p; i > 0; --i) 
+    for (i = p; i > 0; --i)
         putchar(bit[i] + 48);
 }
-inline void write(double x,int k)
+inline void write(double x, int k)
 {
     static int n = pow(10, k);
     if (x == 0)
     {
         putchar('0');
         putchar('.');
-        for (int i = 1; i <= k; ++i) 
+        for (int i = 1; i <= k; ++i)
             putchar('0');
         return;
     }
-    if (x < 0) putchar('-'), x = -x;
-    long long y = (long long) (x * n) % n;
-    x = (long long) x;
+    if (x < 0)
+        putchar('-'), x = -x;
+    long long y = (long long)(x * n) % n;
+    x = (long long)x;
     dwrite(x), putchar('.');
     int bit[10], p = 0, i;
     for (; p < k; y /= 10)
@@ -113,15 +115,77 @@ inline void write(double x,int k)
 }
 
 long long totN;
-vector<unsigned short> hadnum[1009];
+set<int> hadnum[39];
 long long nownum;
+bool intempty[1090];
+set<int> finalnums;
 
 int main()
 {
-    totN=read();
-    for(int i=1;i<=totN;++i)
+    totN = read();
+    for (int i = 1; i <= totN; ++i)
     {
-
+        nownum = read();
+        for (int j = 0; j <= 30; j++)
+        {
+            if (nownum & (1ll << j))
+            {
+                hadnum[j].insert(nownum);
+            }
+        }
+    }
+    int mxwei = 0;
+    for (int i = 30; i >= 0; --i)
+    {
+        if (hadnum[i].size() >= 2)
+        {
+            finalnums = hadnum[i];
+            mxwei = i;
+            for (int j = mxwei; j >= 0; --j)
+            {
+                int cnt = 0;
+                set<int> nowve;
+                for (auto ve : finalnums)
+                {
+                    if (hadnum[j].find(ve) != hadnum[j].end())
+                    {
+                        ++cnt;
+                        nowve.insert(ve);
+                    }
+                }
+                if (cnt >= 2)
+                {
+                    set<int> tempset = finalnums;
+                    for (auto &&vee : finalnums)
+                    {
+                        if (nowve.find(vee) == nowve.end())
+                        {
+                            tempset.erase(vee);
+                        }
+                    }
+                    finalnums = tempset;
+                }
+                if (cnt == 2)
+                {
+                    bool temp00 = false;
+                    long long fi;
+                    for (auto &&d : finalnums)
+                    {
+                        if (!temp00)
+                        {
+                            temp00 = true;
+                            fi = d;
+                        }
+                        else
+                        {
+                            fi &= d;
+                        }
+                    }
+                    write(fi);
+                    return 0;
+                }
+            }
+        }
     }
     return 0;
-}//LikiBlaze Code
+} //LikiBlaze Code
