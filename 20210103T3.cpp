@@ -1,7 +1,4 @@
-#include <cstdio>
-#include<iostream>
-#include<algorithm>
-#include<set>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -118,77 +115,41 @@ inline void write(double x, int k)
 }
 
 long long totN;
-set<int> hadnum[39];
-long long nownum;
-bool intempty[1090];
-set<int> finalnums;
+long long totM;
+long long totK;
+long long mainS,mainT;
+int head[100090];
+struct Edge
+{
+    int nxt;
+    int to;
+}edges[100090];
+int cnt_edges;
+void add_edge(int x,int y,int z)
+{
+    ++cnt_edges;
+    edges[cnt_edges].nxt=head[x];
+    edges[cnt_edges].to=y;
+    head[x]=cnt_edges;
+    ++cnt_edges;
+    edges[cnt_edges].nxt=head[x+totN];
+    edges[cnt_edges].to=y;
+    head[x]=cnt_edges;
+}
 
 int main()
 {
-    totN = read();
-    for (int i = 1; i <= totN; ++i)
+    totN=read();
+    totM=read();
+    totK=read();
+    mainS=read();
+    mainT=read();
+    for (register int i = 1,x,y,z; i <= totN; i++)
     {
-        nownum = read();
-        for (int j = 0; j <= 30; j++)
-        {
-            if (nownum & (1ll << j))
-            {
-                hadnum[j].insert(nownum);
-            }
-        }
+        x=read();
+        y=read();
+
     }
-    int mxwei = 0;
-    for (int i = 30; i >= 0; --i)
-    {
-        if (hadnum[i].size() >= 2)
-        {
-            finalnums = hadnum[i];
-            mxwei = i;
-            for (int j = mxwei; j >= 0; --j)
-            {
-                int cnt = 0;
-                set<int> nowve;
-                for (auto ve : finalnums)
-                {
-                    if (hadnum[j].find(ve) != hadnum[j].end())
-                    {
-                        ++cnt;
-                        nowve.insert(ve);
-                    }
-                }
-                if (cnt >= 2)
-                {
-                    set<int> tempset = finalnums;
-                    for (auto &&vee : finalnums)
-                    {
-                        if (nowve.find(vee) == nowve.end())
-                        {
-                            tempset.erase(vee);
-                        }
-                    }
-                    finalnums = tempset;
-                }
-                if (cnt == 2)
-                {
-                    bool temp00 = false;
-                    long long fi;
-                    for (auto &&d : finalnums)
-                    {
-                        if (!temp00)
-                        {
-                            temp00 = true;
-                            fi = d;
-                        }
-                        else
-                        {
-                            fi &= d;
-                        }
-                    }
-                    write(fi);
-                    return 0;
-                }
-            }
-        }
-    }
+    
     return 0;
 } //LikiBlaze Code
