@@ -136,16 +136,24 @@ void add_edge(int x,int y)
     head[y]=cnt_edges;
     edges[cnt_edges].to=x;
 }
+void DFS01(int now,int fa)
 
 int main()
 {
     totN=read();
     totM=read();
     totR=read();
-    totP=read();
-    for (int i = 0; i < totN; i++)
+    MOD=totP=read();
+    for (int i = 1; i <= totN; i++)
     {
         nums[i]=read();
+        nums[i]%=MOD;
+    }
+    for (int i = 1,x,y; i <= totM; i++)
+    {
+        x=read();
+        y=read();
+        add_edge(x,y);
     }
     
     return 0;
