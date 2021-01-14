@@ -125,6 +125,10 @@ struct Edge
 int head[100090];
 int cnt_edges;
 int MOD;
+int dep[100090];
+int fa[100090];
+int siz[100090];
+int son[100090];
 void add_edge(int x,int y)
 {
     ++cnt_edges;
@@ -136,8 +140,36 @@ void add_edge(int x,int y)
     head[y]=cnt_edges;
     edges[cnt_edges].to=x;
 }
-void DFS01(int now,int fa)
-
+void DFS01(int now,int fath,int depth)
+{
+    dep[now]=depth;
+    fa[now]=fath;
+    int maxson=-1;
+    for (int i = head[now]; i ; i=edges[i].nxt)
+    {
+        int y=edges[i].to;
+        if(y==fath)
+        {
+            continue;
+        }
+        DFS01(y,x,depth+1);
+        siz[now]+=siz[y];
+        if(siz[y]>maxson)
+        {
+            son[now]=y;
+            maxson=siz[y];
+        }
+    }
+}
+int id[100090];
+int wt[100090];
+int cnt_id;
+void DFS02(int now,int topf)
+{
+    wt[now]=nums[now];
+    id[now]=++cnt_id;
+    to
+}
 int main()
 {
     totN=read();
