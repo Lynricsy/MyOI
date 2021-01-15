@@ -164,11 +164,27 @@ void DFS01(int now,int fath,int depth)
 int id[100090];
 int wt[100090];
 int cnt_id;
+int top[100090];
+
 void DFS02(int now,int topf)
 {
     wt[now]=nums[now];
     id[now]=++cnt_id;
-    to
+    top[now]=topf;
+    if(!son[now])
+    {
+        return;
+    }
+    DFS02(son[now],topf);
+    for (int i = head[now] ; i ; i=edges[i].nxt)
+    {
+        int y=edges[i].to;
+        if(y==fa[now]||y==son[now])
+        {
+            continue;
+        }
+        DFS02(y,y);
+    }
 }
 int main()
 {
