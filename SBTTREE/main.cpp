@@ -118,16 +118,34 @@ struct Node
 {
 	Node *lch, *rch;
 	int val, size;
-	Node(int key)
-    {
-	    lch=rch=NULL;
-	    size=1;
-	    val=key;
-    }
-}rot(0);
+	Node(int key);
+};
+
+Node *null=new Node(0);
+
+void init()
+{
+	null->lch=null;
+	null->rch=null;
+	null->size=0;
+	null->val=0;
+}
+
+Node::Node(int key)
+{
+	lch=rch=null;
+	size=1;
+	val=0;
+}
+
+Node *rot=new Node(0);
 
 void L_rotate(Node *x)
 {
+	if(!x)
+	{
+		return;
+	}
 	Node *y = x->lch;
 	x->rch = y->lch;
 	y->lch = x;
@@ -138,6 +156,10 @@ void L_rotate(Node *x)
 
 void R_rotate(Node *x)
 {
+	if(!x)
+	{
+		return;
+	}
 	Node *y = x->lch;
 	x->lch = y->rch;
 	y->rch = x;
@@ -148,6 +170,10 @@ void R_rotate(Node *x)
 
 void maintain(Node *x,bool flag)
 {
+	if(!x)
+	{
+		return;
+	}
     if (flag== false)
     {
         if (x->lch->lch->size>x->rch->size)
@@ -183,7 +209,7 @@ void maintain(Node *x,bool flag)
 
 void insert(Node *x,int keys)
 {
-	if (x == NULL)
+	if (x == null)
 	{
 		x = new Node(keys);
 	} else
@@ -202,9 +228,13 @@ void insert(Node *x,int keys)
 
 int remove(Node *x,int keys)
 {
+	if(!x)
+	{
+		return 0;
+	}
 	int dekey;
 	--x->size;
-	if ((keys==x->val)||(keys<x->val&&x->lch==NULL)||(keys>x->val&&x->rch==NULL))
+	if ((keys==x->val)||(keys<x->val&&x->lch==null)||(keys>x->val&&x->rch==null))
 	{
 		dekey=x->val;
 		if (x->lch&&x->rch)
@@ -212,15 +242,15 @@ int remove(Node *x,int keys)
 			x->val=remove(x->lch,x->val+1);
 		} else
 		{
-			if (x->lch==NULL)
+			if (x->lch==null)
 			{
 				x=x->rch;
-			} else if (x->rch==NULL)
+			} else if (x->rch==null)
 			{
 				x=x->lch;
 			} else
 			{
-				x=NULL;
+				x=null;
 			}
 		}
 	} else if (keys>x->val)
@@ -233,21 +263,24 @@ int remove(Node *x,int keys)
 	return dekey;
 }
 
-
 int get_min()
 {
 	Node *x;
-	for (x = &rot; x->lch; x=x->lch);
+	for (x = rot; x->lch; x=x->lch);
 	return x->val;
 }
 int get_max()
 {
 	Node *x;
-	for (x = &rot; x->rch; x=x->rch);
+	for (x = rot; x->rch; x=x->rch);
 	return x->val;
 }
 int find_Kth(Node *x,int K)
 {
+	if(!x)
+	{
+		return 0;
+	}
 	int tr=x->lch->size+1;
 	if (tr==K)
 	{
@@ -260,8 +293,96 @@ int find_Kth(Node *x,int K)
 		return find_Kth(x->lch,K);
 	}
 }
+int ranking(Node *x,int keys)
+{
+	if(!x)
+	{
+		return 1;
+	}
+	if (keys<x->val)
+	{
+		return ranking(x->lch,keys);
+	} else if (keys>x->val)
+	{
+		return ranking(x->rch,keys);
+	}
+	return x->lch->size+1;
+}
+
+int Upper(int w)
+{
+	Node *now=rot;
+	int result=2147483600;
+	while(now)
+	{
+		if(now->val>w&&now->val<result)
+		{
+			result=now->val;
+		}
+		if(w<now->val)
+		{
+			now=now->lch;
+		}
+		else
+		{
+			now=now->rch;
+		}
+	}
+	return result;
+}
+int Lowwer(int w)
+{
+	Node *now=rot;
+	int result=-2147483600;
+	while(now)
+	{
+		if(now->val<w&&now->val>result)
+		{
+			result=now->val;
+		}
+		if(w>now->val)
+		{
+			now=now->rch;
+		}
+		else
+		{
+			now=now->lch;
+		}
+	}
+	return result;
+}
+
+long long totN;
 
 int main()
 {
+	init();
+	totN=read();
+	register char opt;
+	register long long K;
+	for(register long long i=1;i<=totN;++i)
+	{
+		opt=getchar();
+		K=read();
+		switch (opt)
+		{
+		case '1':
+			insert(rot,K);
+			break;
+		case '2':
+			remove(rot,K);
+			break;
+		case '3':
+			write(ranking(rot,K));
+		case '4':
+			write(find_Kth(rot,K));
+		case '5':
+			write(Lowwer(K));
+		case '6':
+			write(Upper(K));
+		default:
+			break;
+		}
+	}
 	return 0;
 } // LikiBlaze Code

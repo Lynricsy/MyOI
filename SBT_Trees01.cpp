@@ -140,7 +140,7 @@ void R_rotate(Node *x)
 	x = y;
 }
 
-int main() 
+int main()
 { 
 	return 0; 
 } // LikiBlaze Code
