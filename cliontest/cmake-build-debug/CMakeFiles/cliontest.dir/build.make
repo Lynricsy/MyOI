@@ -38,19 +38,19 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.2\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\WangYunHan\CLionProjects\cliontest
+CMAKE_SOURCE_DIR = C:\Users\Thomatics\myoi\cliontest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\WangYunHan\CLionProjects\cliontest\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Thomatics\myoi\cliontest\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles\cliontest.dir\depend.make
@@ -63,21 +63,21 @@ include CMakeFiles\cliontest.dir\flags.make
 
 CMakeFiles\cliontest.dir\main.cpp.obj: CMakeFiles\cliontest.dir\flags.make
 CMakeFiles\cliontest.dir\main.cpp.obj: ..\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\WangYunHan\CLionProjects\cliontest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cliontest.dir/main.cpp.obj"
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\cliontest.dir\main.cpp.obj /FdCMakeFiles\cliontest.dir\ /FS -c C:\Users\WangYunHan\CLionProjects\cliontest\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Thomatics\myoi\cliontest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cliontest.dir/main.cpp.obj"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\cliontest.dir\main.cpp.obj /FdCMakeFiles\cliontest.dir\ /FS -c C:\Users\Thomatics\myoi\cliontest\main.cpp
 <<
 
 CMakeFiles\cliontest.dir\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cliontest.dir/main.cpp.i"
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\cliontest.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\WangYunHan\CLionProjects\cliontest\main.cpp
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\cl.exe" > CMakeFiles\cliontest.dir\main.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Thomatics\myoi\cliontest\main.cpp
 <<
 
 CMakeFiles\cliontest.dir\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cliontest.dir/main.cpp.s"
-	C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\cliontest.dir\main.cpp.s /c C:\Users\WangYunHan\CLionProjects\cliontest\main.cpp
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\cliontest.dir\main.cpp.s /c C:\Users\Thomatics\myoi\cliontest\main.cpp
 <<
 
 # Object files for target cliontest
@@ -90,9 +90,9 @@ cliontest_EXTERNAL_OBJECTS =
 cliontest.exe: CMakeFiles\cliontest.dir\main.cpp.obj
 cliontest.exe: CMakeFiles\cliontest.dir\build.make
 cliontest.exe: CMakeFiles\cliontest.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\WangYunHan\CLionProjects\cliontest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cliontest.exe"
-	"C:\Program Files\JetBrains\CLion 2020.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cliontest.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~1\2019\COMMUN~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cliontest.dir\objects1.rsp @<<
- /out:cliontest.exe /implib:cliontest.lib /pdb:C:\Users\WangYunHan\CLionProjects\cliontest\cmake-build-debug\cliontest.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Thomatics\myoi\cliontest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable cliontest.exe"
+	"D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cliontest.dir --rc="D:\Windows Kits\10\bin\10.0.19041.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.19041.0\x86\mt.exe" --manifests  -- "D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\cliontest.dir\objects1.rsp @<<
+ /out:cliontest.exe /implib:cliontest.lib /pdb:C:\Users\Thomatics\myoi\cliontest\cmake-build-debug\cliontest.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 
 # Rule to build all files generated by this target.
@@ -105,6 +105,6 @@ CMakeFiles\cliontest.dir\clean:
 .PHONY : CMakeFiles\cliontest.dir\clean
 
 CMakeFiles\cliontest.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\WangYunHan\CLionProjects\cliontest C:\Users\WangYunHan\CLionProjects\cliontest C:\Users\WangYunHan\CLionProjects\cliontest\cmake-build-debug C:\Users\WangYunHan\CLionProjects\cliontest\cmake-build-debug C:\Users\WangYunHan\CLionProjects\cliontest\cmake-build-debug\CMakeFiles\cliontest.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\Thomatics\myoi\cliontest C:\Users\Thomatics\myoi\cliontest C:\Users\Thomatics\myoi\cliontest\cmake-build-debug C:\Users\Thomatics\myoi\cliontest\cmake-build-debug C:\Users\Thomatics\myoi\cliontest\cmake-build-debug\CMakeFiles\cliontest.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles\cliontest.dir\depend
 

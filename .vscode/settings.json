@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "set": "cpp",
-        "type_traits": "cpp"
-    },
-    "cmake.configureOnOpen": false
-}

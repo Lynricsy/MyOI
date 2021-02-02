@@ -125,8 +125,8 @@ Node *null=new Node(0);
 
 void init()
 {
-	null->lch=null;
-	null->rch=null;
+	null->lch=NULL;
+	null->rch=NULL;
 	null->size=0;
 	null->val=0;
 }

@@ -1,18 +1,18 @@
-"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\LikiBlaze\MyOI\SBTTREE
--- The C compiler identification is MSVC 19.28.29617.0
--- The CXX compiler identification is MSVC 19.28.29617.0
--- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29617/bin/Hostx86/x86/cl.exe
--- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29617/bin/Hostx86/x86/cl.exe - works
+"D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\Thomatics\myoi\SBTTREE
+-- The C compiler identification is MSVC 19.28.29812.0
+-- The CXX compiler identification is MSVC 19.28.29812.0
+-- Check for working C compiler: D:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29812/bin/Hostx86/x86/cl.exe
+-- Check for working C compiler: D:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29812/bin/Hostx86/x86/cl.exe - works
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29617/bin/Hostx86/x86/cl.exe
--- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29617/bin/Hostx86/x86/cl.exe - works
+-- Check for working CXX compiler: D:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29812/bin/Hostx86/x86/cl.exe
+-- Check for working CXX compiler: D:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29812/bin/Hostx86/x86/cl.exe - works
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/LikiBlaze/MyOI/SBTTREE/cmake-build-debug
+-- Build files have been written to: C:/Users/Thomatics/myoi/SBTTREE/cmake-build-debug

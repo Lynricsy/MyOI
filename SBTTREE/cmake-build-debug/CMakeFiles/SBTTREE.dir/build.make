@@ -38,19 +38,19 @@ NULL=nul
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\LikiBlaze\MyOI\SBTTREE
+CMAKE_SOURCE_DIR = C:\Users\Thomatics\myoi\SBTTREE
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\LikiBlaze\MyOI\SBTTREE\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Thomatics\myoi\SBTTREE\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles\SBTTREE.dir\depend.make
@@ -63,21 +63,21 @@ include CMakeFiles\SBTTREE.dir\flags.make
 
 CMakeFiles\SBTTREE.dir\main.cpp.obj: CMakeFiles\SBTTREE.dir\flags.make
 CMakeFiles\SBTTREE.dir\main.cpp.obj: ..\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\LikiBlaze\MyOI\SBTTREE\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SBTTREE.dir/main.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1428~1.296\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SBTTREE.dir\main.cpp.obj /FdCMakeFiles\SBTTREE.dir\ /FS -c C:\Users\LikiBlaze\MyOI\SBTTREE\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Thomatics\myoi\SBTTREE\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SBTTREE.dir/main.cpp.obj"
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SBTTREE.dir\main.cpp.obj /FdCMakeFiles\SBTTREE.dir\ /FS -c C:\Users\Thomatics\myoi\SBTTREE\main.cpp
 <<
 
 CMakeFiles\SBTTREE.dir\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SBTTREE.dir/main.cpp.i"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1428~1.296\bin\Hostx86\x86\cl.exe > CMakeFiles\SBTTREE.dir\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\LikiBlaze\MyOI\SBTTREE\main.cpp
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\cl.exe" > CMakeFiles\SBTTREE.dir\main.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Thomatics\myoi\SBTTREE\main.cpp
 <<
 
 CMakeFiles\SBTTREE.dir\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SBTTREE.dir/main.cpp.s"
-	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1428~1.296\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SBTTREE.dir\main.cpp.s /c C:\Users\LikiBlaze\MyOI\SBTTREE\main.cpp
+	"D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\cl.exe" @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SBTTREE.dir\main.cpp.s /c C:\Users\Thomatics\myoi\SBTTREE\main.cpp
 <<
 
 # Object files for target SBTTREE
@@ -90,9 +90,9 @@ SBTTREE_EXTERNAL_OBJECTS =
 SBTTREE.exe: CMakeFiles\SBTTREE.dir\main.cpp.obj
 SBTTREE.exe: CMakeFiles\SBTTREE.dir\build.make
 SBTTREE.exe: CMakeFiles\SBTTREE.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\LikiBlaze\MyOI\SBTTREE\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SBTTREE.exe"
-	"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\SBTTREE.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100183~1.0\x86\mt.exe --manifests  -- C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1428~1.296\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\SBTTREE.dir\objects1.rsp @<<
- /out:SBTTREE.exe /implib:SBTTREE.lib /pdb:C:\Users\LikiBlaze\MyOI\SBTTREE\cmake-build-debug\SBTTREE.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Thomatics\myoi\SBTTREE\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SBTTREE.exe"
+	"D:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\SBTTREE.dir --rc="D:\Windows Kits\10\bin\10.0.19041.0\x86\rc.exe" --mt="D:\Windows Kits\10\bin\10.0.19041.0\x86\mt.exe" --manifests  -- "D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\bin\Hostx86\x86\link.exe" /nologo @CMakeFiles\SBTTREE.dir\objects1.rsp @<<
+ /out:SBTTREE.exe /implib:SBTTREE.lib /pdb:C:\Users\Thomatics\myoi\SBTTREE\cmake-build-debug\SBTTREE.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 
 # Rule to build all files generated by this target.
@@ -105,6 +105,6 @@ CMakeFiles\SBTTREE.dir\clean:
 .PHONY : CMakeFiles\SBTTREE.dir\clean
 
 CMakeFiles\SBTTREE.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\LikiBlaze\MyOI\SBTTREE C:\Users\LikiBlaze\MyOI\SBTTREE C:\Users\LikiBlaze\MyOI\SBTTREE\cmake-build-debug C:\Users\LikiBlaze\MyOI\SBTTREE\cmake-build-debug C:\Users\LikiBlaze\MyOI\SBTTREE\cmake-build-debug\CMakeFiles\SBTTREE.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\Thomatics\myoi\SBTTREE C:\Users\Thomatics\myoi\SBTTREE C:\Users\Thomatics\myoi\SBTTREE\cmake-build-debug C:\Users\Thomatics\myoi\SBTTREE\cmake-build-debug C:\Users\Thomatics\myoi\SBTTREE\cmake-build-debug\CMakeFiles\SBTTREE.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles\SBTTREE.dir\depend
 

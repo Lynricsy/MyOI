@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/LikiBlaze/MyOI/SBTTREE/main.cpp" "C:/Users/LikiBlaze/MyOI/SBTTREE/cmake-build-debug/CMakeFiles/SBTTREE.dir/main.cpp.obj"
+  "C:/Users/Thomatics/myoi/SBTTREE/main.cpp" "C:/Users/Thomatics/myoi/SBTTREE/cmake-build-debug/CMakeFiles/SBTTREE.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
