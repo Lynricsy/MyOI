@@ -85,9 +85,9 @@ inline void dwrite(long long x)
         return;
     }
     int bit[20], p = 0, i;
-    for (; x; x /= 10) 
+    for (; x; x /= 10)
         bit[++p] = x % 10;
-    for (i = p; i > 0; --i) 
+    for (i = p; i > 0; --i)
         putchar(bit[i] + 48);
 }
 inline void write(double x,int k)
@@ -97,7 +97,7 @@ inline void write(double x,int k)
     {
         putchar('0');
         putchar('.');
-        for (int i = 1; i <= k; ++i) 
+        for (int i = 1; i <= k; ++i)
             putchar('0');
         return;
     }
@@ -106,9 +106,9 @@ inline void write(double x,int k)
     x = (long long) x;
     dwrite(x), putchar('.');
     int bit[10], p = 0, i;
-    for (; p < k; y /= 10) 
+    for (; p < k; y /= 10)
         bit[++p] = y % 10;
-    for (i = p; i > 0; i--) 
+    for (i = p; i > 0; i--)
         putchar(bit[i] + 48);
 }
 
@@ -147,6 +147,7 @@ int main()
 		{
 			flag=true;
 		}
+
 		/*
 		if(C1>C0)
 		{
