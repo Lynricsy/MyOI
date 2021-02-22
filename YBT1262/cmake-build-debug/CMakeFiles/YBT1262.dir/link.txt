@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/YBT1262.dir/main.cpp.o  -o YBT1262 

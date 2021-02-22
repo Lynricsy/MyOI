@@ -1,0 +1,3 @@
+/home/thomitics/MyOI/YBT1262/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/thomitics/MyOI/YBT1262/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/thomitics/MyOI/YBT1262/cmake-build-debug/CMakeFiles/YBT1262.dir
