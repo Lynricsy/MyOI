@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "functional": "cpp",
+        "array": "cpp",
+        "charconv": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "utility": "cpp"
+    }
+}

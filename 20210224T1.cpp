@@ -114,25 +114,8 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-int DP[109];
-int S[109];
-
 int main()
 {
-    totN=read();
-    for (int i = 1; i <= totN; ++i)
-    {
-        S[i]=read();
-    }
-    for (int i = totN; i >= 1; --i)
-    {
-        for (int j = 1; j <= totN-i; ++j)
-        {
-            
-        }
-        
-    }
-    
+
     return 0;
 } //LikiBlaze Code
