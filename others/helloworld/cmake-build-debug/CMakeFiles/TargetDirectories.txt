@@ -1,0 +1,3 @@
+C:/Users/Thomitics/MyOI/others/helloworld/cmake-build-debug/CMakeFiles/helloworld.dir
+C:/Users/Thomitics/MyOI/others/helloworld/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Thomitics/MyOI/others/helloworld/cmake-build-debug/CMakeFiles/rebuild_cache.dir

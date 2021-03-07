@@ -114,33 +114,95 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-int DP[109][109];
-int S[109];
-long long de[109][109];
+long long totN;
+long long totM;
+long long totQ;
+long long nowPL;
+long long nowJ;
+long long nowC;
+long long maxJIE = 2;
+long long JIE[1000090];
+const long long MOD = 998244353;
+
+long long Q[100090];
+long long M[100090];
+
+long long fact(long long x)
+{
+    if (x == 0 || x == 1)
+    {
+        return 1;
+    }
+
+    if (x <= maxJIE)
+    {
+        return JIE[x];
+    }
+    else
+    {
+        for (long long i = maxJIE; i <= x; ++i)
+        {
+            JIE[i] = (JIE[i - 1] * i) % MOD;
+        }
+        maxJIE = x;
+        return x;
+    }
+}
+long long suC(long long n, long long m)
+{
+    if (m == n)
+    {
+        return 1;
+    }
+
+    return (fact(n) / (fact(n - m) * fact(m)));
+}
 
 int main()
 {
+    freopen("plus.in","r",stdin);
+    freopen("plus.out","w",stdout);
+    JIE[0] = 1;
+    JIE[1] = 1;
+    JIE[2] = 2;
     totN = read();
+    totQ = read();
+    totM = read();
+    for (int i = 1; i <= totQ; ++i)
+    {
+        Q[i] = read();
+    }
     for (int i = 1; i <= totN; ++i)
     {
-        S[i] = read();
+        M[i] = read();
     }
-    for (int len = 2; len <= totN; len++)
+    for (int i = 1; i <= totM; ++i)
     {
-        for (int s = 1, e = len; s <= totN; s++, e++)
+        nowPL = read();
+        nowJ = read();
+        nowC = read();
+        long long nowU = fact(Q[nowJ]);
+        long long nowL = nowU;
+        long long nowCNT = 0;
+        for (int j = nowPL; j <= totN; ++j)
         {
-            for (int k = de[s][e - 1]; k <= de[s][e - 1]; k++)
-            {
-                DP[s][e] = 999999999;
-                if (DP[s][e] > DP[s][k] + DP[k+1][e] + len)
-                {
-                    DP[s][e] = DP[s][k] + DP[k+1][e] + len;
-                    de[s][e] = k;
-                }
-            }
+            /*
+            ++nowCNT;
+            M[j] += (nowC * (nowL / nowU)) % MOD;
+            M[j] %= MOD;
+            nowL /= nowCNT;
+            nowL *= (nowJ + nowCNT);
+            */
+            M[j] += nowC * suC(Q[nowJ] + j - nowPL, Q[nowJ]);
         }
     }
-    write(DP[1][totN]);
+    for (long long i = 1; i <= totN; i++)
+    {
+        write(M[i]);
+        putchar(' ');
+    }
     return 0;
 } //LikiBlaze Code
+  /*
+(m+a)!/(m!*a!)
+*/

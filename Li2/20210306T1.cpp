@@ -114,33 +114,59 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-int DP[109][109];
-int S[109];
-long long de[109][109];
+long long totT, totN, totM, xx1, xx2, yy1, yy2, kk1, kk2;
+
+long long Senta()
+{
+    long long xx = xx2 - xx1;
+    if (xx < 0)
+        xx *= -1;
+    long long yy = yy2 - yy1;
+    if (yy < 0)
+        yy *= -1;
+    return xx + yy;
+}
 
 int main()
 {
-    totN = read();
-    for (int i = 1; i <= totN; ++i)
+    freopen("jump.in", "r", stdin);
+    freopen("jump.out", "w", stdout);
+    totT = read();
+    while (totT--)
     {
-        S[i] = read();
-    }
-    for (int len = 2; len <= totN; len++)
-    {
-        for (int s = 1, e = len; s <= totN; s++, e++)
+        totN = read();
+        totM = read();
+        xx1 = read();
+        xx2 = read();
+        yy1 = read();
+        yy2 = read();
+        kk1 = read();
+        kk2 = read();
+        if (totN == 1 || totM == 1)
         {
-            for (int k = de[s][e - 1]; k <= de[s][e - 1]; k++)
+            puts("YES");
+            continue;
+        }
+        else if (kk1 == kk2 && kk1 == 0)
+        {
+            if (Senta() % 2 == 1)
+                puts("NO");
+            else
+                puts("YES");
+            continue;
+        }
+        else
+        {
+            if (kk1 >= kk2)
             {
-                DP[s][e] = 999999999;
-                if (DP[s][e] > DP[s][k] + DP[k+1][e] + len)
-                {
-                    DP[s][e] = DP[s][k] + DP[k+1][e] + len;
-                    de[s][e] = k;
-                }
+                puts("NO");
             }
+            else
+            {
+                puts("YES");
+            }
+            continue;
         }
     }
-    write(DP[1][totN]);
     return 0;
-} //LikiBlaze Code
+}

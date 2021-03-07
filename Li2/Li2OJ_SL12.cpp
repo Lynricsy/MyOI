@@ -114,33 +114,41 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-int totN;
-int DP[109][109];
-int S[109];
-long long de[109][109];
+int euler_phi(int n)
+{
+    int ans = n;
+    for (int i = 2; i * i <= n; i++)
+        if (n % i == 0)
+        {
+            ans = ans / i * (i - 1);
+            while (n % i == 0)
+                n /= i;
+        }
+    if (n > 1)
+        ans = ans / n * (n - 1);
+    return ans;
+}
+long long nowN;
+long long F[1000090];
+
+void init()
+{
+    F[2]=1;
+    for(long long i=3;i<=1000009;++i)
+    {
+        F[i]=F[i-1]+euler_phi(i);
+    }
+}
 
 int main()
 {
-    totN = read();
-    for (int i = 1; i <= totN; ++i)
+    nowN=read();
+    init();
+    while (nowN)
     {
-        S[i] = read();
+        write(F[nowN]);
+        putchar('\n');
+        nowN=read();
     }
-    for (int len = 2; len <= totN; len++)
-    {
-        for (int s = 1, e = len; s <= totN; s++, e++)
-        {
-            for (int k = de[s][e - 1]; k <= de[s][e - 1]; k++)
-            {
-                DP[s][e] = 999999999;
-                if (DP[s][e] > DP[s][k] + DP[k+1][e] + len)
-                {
-                    DP[s][e] = DP[s][k] + DP[k+1][e] + len;
-                    de[s][e] = k;
-                }
-            }
-        }
-    }
-    write(DP[1][totN]);
     return 0;
 } //LikiBlaze Code
