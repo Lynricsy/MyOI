@@ -115,56 +115,15 @@ inline void write(double x, int k)
 }
 
 long long totN;
-long long totM;
-long long nowX;
-long long nowY;
-long long nowV;
-struct Node
+long long totS;
+struct Task
 {
-    long long x;
-    long long y;
-    long long v;
-} nodes[100090];
-bool operator<(Node a, Node b)
-{
-    return a.v < b.v;
-}
+    long long t;
+};
+
 
 int main()
 {
-    totN = read();
-    totM = read();
-    for (long long i = 1; i <= totN; i++)
-    {
-        nodes[i].x = read();
-        nodes[i].y = read();
-        nodes[i].v = read();
-    }
-    sort(nodes + 1, nodes + totN + 1);
-    for (long long i = 1; i <= totM; i++)
-    {
-        nowX=read();
-        nowY=read();
-        nowV=read();
-        int cnt=1;
-        double nowMIN=99999999;
-        long long minP=0;
-        while (nodes[cnt].v<=nowV&&cnt<=totN)
-        {
-            if(((double)nowX-(double)nodes[cnt].x)*((double)nowX-(double)nodes[cnt].x)+((double)nowY-(double)nodes[cnt].y)*((double)nowY-(double)nodes[cnt].y)<(double)nowMIN)
-            {
-                nowMIN=((double)nowX-(double)nodes[cnt].x)*((double)nowX-(double)nodes[cnt].x)+((double)nowY-(double)nodes[cnt].y)*((double)nowY-(double)nodes[cnt].y);
-                minP=cnt;
-            }
-            ++cnt;
-        }
-        write(nodes[minP].x);
-        putchar(' ');
-        write(nodes[minP].y);
-        putchar(' ');
-        write(nodes[minP].v);
-        putchar('\n');
-    }
 
     return 0;
-} //LikiBlaze Code
+} //Thomitics Code

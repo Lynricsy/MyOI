@@ -126,16 +126,20 @@ int main()
     {
         S[i] = read();
     }
+    for (int i = 1; i <= totN; ++i)
+    {
+        de[i][i] = 1;
+    }
     for (int len = 2; len <= totN; len++)
     {
         for (int s = 1, e = len; s <= totN; s++, e++)
         {
-            for (int k = de[s][e - 1]; k <= de[s][e - 1]; k++)
+            DP[s][e] = 999999999;
+            for (int k = de[s][e - 1]; k <= de[s + 1][e]; k++)
             {
-                DP[s][e] = 999999999;
-                if (DP[s][e] > DP[s][k] + DP[k+1][e] + len)
+                if (DP[s][e] > DP[s][k] + DP[k + 1][e] + len)
                 {
-                    DP[s][e] = DP[s][k] + DP[k+1][e] + len;
+                    DP[s][e] = DP[s][k] + DP[k + 1][e] + len;
                     de[s][e] = k;
                 }
             }

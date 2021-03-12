@@ -7,7 +7,7 @@ inline long long read()
     long long x = 0;
     int f = 1;
     char ch = getchar();
-    while (ch < '0' || ch > '9')
+    while (ch < '0' || ch>'9')
     {
         if (ch == '-')
             f = -1;
@@ -20,7 +20,7 @@ inline long long read()
     }
     return x * f;
 }
-void write(const long long &x)
+void write(const long long& x)
 {
     if (!x)
     {
@@ -48,33 +48,32 @@ void write(const long long &x)
 inline double dread()
 {
     double r;
-    double x = 0, t = 0;
-    int s = 0, f = 1;
-    char c = getchar();
-    for (; !isdigit(c); c = getchar())
+    double x=0,t=0;
+    int s=0,f=1;
+    char c=getchar();
+    for (;!isdigit(c);c=getchar())
     {
-        if (c == '-')
+        if (c=='-')
         {
-            f = -1;
+            f=-1;
         }
-        if (c == '.')
+        if (c=='.')
         {
             goto readt;
         }
     }
-    for (; isdigit(c) && c != '.'; c = getchar())
+    for (;isdigit(c)&&c!='.';c=getchar())
     {
-        x = x * 10 + c - '0';
+        x=x*10+c-'0';
     }
-readt:
-    for (; c == '.'; c = getchar())
-        ;
-    for (; isdigit(c); c = getchar())
+    readt:
+    for (;c=='.';c=getchar());
+    for (;isdigit(c);c=getchar())
     {
-        t = t * 10 + c - '0';
+        t=t*10+c-'0';
         ++s;
     }
-    r = (x + t / pow(10, s)) * f;
+    r=(x+t/pow(10,s))*f;
     return r;
 }
 
@@ -86,36 +85,68 @@ inline void dwrite(long long x)
         return;
     }
     int bit[20], p = 0, i;
-    for (; x; x /= 10)
+    for (; x; x /= 10) 
         bit[++p] = x % 10;
-    for (i = p; i > 0; --i)
+    for (i = p; i > 0; --i) 
         putchar(bit[i] + 48);
 }
-inline void write(double x, int k)
+inline void write(double x,int k)
 {
     static int n = pow(10, k);
     if (x == 0)
     {
         putchar('0');
         putchar('.');
-        for (int i = 1; i <= k; ++i)
+        for (int i = 1; i <= k; ++i) 
             putchar('0');
         return;
     }
-    if (x < 0)
-        putchar('-'), x = -x;
-    long long y = (long long)(x * n) % n;
-    x = (long long)x;
+    if (x < 0) putchar('-'), x = -x;
+    long long y = (long long) (x * n) % n;
+    x = (long long) x;
     dwrite(x), putchar('.');
     int bit[10], p = 0, i;
-    for (; p < k; y /= 10)
+    for (; p < k; y /= 10) 
         bit[++p] = y % 10;
     for (i = p; i > 0; i--)
         putchar(bit[i] + 48);
 }
 
+long long totN;
+long long totM;
+long long C[100090];
+long long P[100090];
+struct Edge
+{
+	int to,nxt;
+}edges[100090];
+long long head[100090];
+long long cnt_edges;
+
+void add_edge(int x,int y)
+{
+	++cnt_edges;
+	edges[cnt_edges].nxt=head[x];
+	head[x]=cnt_edges;
+	edges[cnt_edges].to=y;
+}
+
 int main()
 {
-
+	totN=read();
+	totM=read();
+	for(int i=1;i<=totN;++i)
+	{
+		C[i]=read();
+	}
+	for(int i=1;i<=totM;++i)
+	{
+		P[i]=read();
+	}
+	for(int i=2;i<=totN;++i)
+	{
+		add_edge(i,ceil((double)i/2.0));
+        add_edge(ceil((double)i/2.0),i);
+	}
     return 0;
-} //Thomitics Code
+}//LikiBlaze Code
