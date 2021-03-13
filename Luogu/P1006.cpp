@@ -117,7 +117,7 @@ inline void write(double x, int k)
 long long totN;
 long long totM;
 int mapp[59][59];
-long long DP[59][59];
+long long DP[59][59][59][59];
 
 int main()
 {
@@ -134,9 +134,15 @@ int main()
     {
         for (int j = 1; j <= totM; ++j)
         {
-            DP[i][j] = max(DP[i - 1][j], DP[i][j - 1]) + mapp[i][j];
+            for (int k = 1; k <= totN; ++k)
+            {
+                for (int l = j+1; l <= totM; ++l)
+                {
+                    DP[i][j][k][l] = max(max(DP[i - 1][j][k - 1][l], DP[i][j - 1][k][l - 1]), max(DP[i - 1][j][k - 1][l], DP[i][j - 1][k][l - 1])) + mapp[i][j] + mapp[k][l];
+                }
+            }
         }
     }
-    write(DP[totN][totM]);
+    write(DP[totN][totM - 1][totN - 1][totM]);
     return 0;
 } //Thomitics Code
