@@ -115,6 +115,8 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
+
+
 int main()
 {
 
