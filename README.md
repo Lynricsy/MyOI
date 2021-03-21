@@ -19,3 +19,5 @@ Some of My Code...
 文件名即为题号，可以到对应OJ去查找。
 
 看不懂可以去OJ里面自行查阅题解。
+
+感谢由JetBrains赞助的All Products Pack.
