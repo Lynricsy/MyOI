@@ -21,3 +21,5 @@ Some of My Code...
 看不懂可以去OJ里面自行查阅题解。
 
 感谢由JetBrains赞助的All Products Pack.
+
+![JetBrains License](https://cdn.jsdelivr.net/gh/Thomitics/PicBed/pics/jetbrains%2020210327.png)
