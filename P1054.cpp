@@ -118,6 +118,12 @@ inline void write(double x, int k)
 int totN;
 int nums[1090];
 int as[1090], bs[1090], cs[1090];
+string str01, str02, str03;
+
+int charID(char x)
+{
+    return x - 'A';
+}
 
 bool check()
 {
@@ -127,16 +133,25 @@ bool check()
         A = nums[as[i]];
         B = nums[bs[i]];
         C = nums[cs[i]];
+        if ((A + B + x) % totN != C)
+        {
+            return false;
+        }
+        x=(A + B + x) / totN;
     }
 }
 
-int charID(char x)
+bool Prune()
 {
-    return x - 'A';
+    if(nums[as[0]]+nums[bs[0]]>totN)
+    {
+        return true;
+    }
 }
 
 void DFS()
 {
+
 }
 
 int main()
@@ -144,6 +159,15 @@ int main()
     totN = read();
     for (int i = 1; i <= totN; ++i)
     {
+        as[i] = charID(getchar());
+    }
+    for (int i = 1; i <= totN; ++i)
+    {
+        bs[i] = charID(getchar());
+    }
+    for (int i = 1; i <= totN; ++i)
+    {
+        cs[i] = charID(getchar());
     }
     return 0;
 } //Thomitics Code
