@@ -115,59 +115,23 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-long long totN;
-string AS, BS;
-long long Ends[100090];
-long long totANS;
-set<string> ANSs;
-string Temp;
+int totN;
+int totH;
+unordered_set<int> S;
 
 int main()
 {
-    totN = read();
-    cin >> AS >> BS;
-    string BST;
-    for (int i = 0; i <= totN - 1; ++i)
+    totN=read();
+    totH=read();
+    for (int i = 1,x,y; i <= totN; i++)
     {
-        int nowCNT = 0;
-        for (int j = 0; j <= totN - 1; j++)
+        for (int j = 1; j <= totH; j++)
         {
-            if (AS[j] == BS[i])
-            {
-                Ends[i] = j;
-                Temp.clear();
-                Temp.push_back(AS[j]);
-                ANSs.insert(Temp);
-                break;
-            }
-            if (j == totN - 1)
-            {
-                Ends[i] = -1;
-            }
-        } //可这热闹是他们的，我什么也没有
-        while (Ends[i] != -1)
-        {
-            nowCNT++;
-            if (i+nowCNT>totN)
-            {
-                break;
-            }
-            for (int k = Ends[i]+1; k <= totN - 1; k++)
-            {
-                if (BS[i + nowCNT] == AS[k])
-                {
-                    Ends[i] = k;
-                    Temp = BS.substr(i, nowCNT+1);
-                    ANSs.insert(Temp);
-                    break;
-                }
-                if (k == totN - 1)
-                {
-                    Ends[i] = -1;
-                }
-            }
+            x=read();
+            S.insert(x);
         }
+        
     }
-    write(ANSs.size());
+    
     return 0;
 } //Thomitics Code
