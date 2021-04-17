@@ -47,16 +47,16 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Thomitics\MyOI\Luogu\P2742
+CMAKE_SOURCE_DIR = C:\Users\Thomitics\MyOI\Luogu\P6254
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles\P2742.dir\all
+all: CMakeFiles\P6254.dir\all
 
 .PHONY : all
 
@@ -66,36 +66,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles\P2742.dir\clean
+clean: CMakeFiles\P6254.dir\clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/P2742.dir
+# Target rules for target CMakeFiles/P6254.dir
 
 # All Build rule for target.
-CMakeFiles\P2742.dir\all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\P2742.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\P2742.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target P2742"
-.PHONY : CMakeFiles\P2742.dir\all
+CMakeFiles\P6254.dir\all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\P6254.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\P6254.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target P6254"
+.PHONY : CMakeFiles\P6254.dir\all
 
 # Build rule for subdir invocation for target.
-CMakeFiles\P2742.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug\CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles\P2742.dir\rule
+CMakeFiles\P6254.dir\rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles\P6254.dir\rule
 
 # Convenience name for target.
-P2742: CMakeFiles\P2742.dir\rule
+P6254: CMakeFiles\P6254.dir\rule
 
-.PHONY : P2742
+.PHONY : P6254
 
 # clean rule for target.
-CMakeFiles\P2742.dir\clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\P2742.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\clean
-.PHONY : CMakeFiles\P2742.dir\clean
+CMakeFiles\P6254.dir\clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\P6254.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\clean
+.PHONY : CMakeFiles\P6254.dir\clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -51,10 +51,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Thomitics\MyOI\Luogu\P2742
+CMAKE_SOURCE_DIR = C:\Users\Thomitics\MyOI\Luogu\P6254
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,9 +83,9 @@ rebuild_cache\fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug\CMakeFiles C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug\CMakeFiles C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P2742\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Thomitics\MyOI\Luogu\P6254\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -114,17 +114,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named P2742
+# Target rules for targets named P6254
 
 # Build rule for target.
-P2742: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) P2742
-.PHONY : P2742
+P6254: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) P6254
+.PHONY : P6254
 
 # fast build rule for target.
-P2742\fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\P2742.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\build
-.PHONY : P2742\fast
+P6254\fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\P6254.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\build
+.PHONY : P6254\fast
 
 main.obj: main.cpp.obj
 
@@ -132,7 +132,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\P2742.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\P6254.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -141,7 +141,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\P2742.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\P6254.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +150,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\P2742.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P2742.dir\main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\P6254.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\P6254.dir\main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... P2742
+	@echo ... P6254
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -67,7 +67,7 @@ inline double dread()
     {
         x = x * 10 + c - '0';
     }
-readt:
+    readt:
     for (; c == '.'; c = getchar())
         ;
     for (; isdigit(c); c = getchar())
@@ -115,10 +115,87 @@ inline void write(double x, int k)
         putchar(bit[i] + 48);
 }
 
-
+long long totN;
+int tip[1000090];
+int flag[1000090];
+int cnfs[1000090];
+int maxF;
+vector<int> Vs[1000090];
+int totMIN;
+int SUMs[1000090];
+int conquers[1000090];
+int SUMc[1000090];
+int ansW=1;
 
 int main()
 {
-
-    return 0;
+	totN = read();
+	for (int i = 1; i <= totN; i++)
+	{
+		char ch = getchar();
+		if (ch == 'e')
+		{
+			tip[i] = -1;
+		}
+		if (ch == 's')
+		{
+			tip[i] = 1;
+		}
+		int x = read();
+		flag[i] = x;
+		maxF = max(maxF, flag[i]);
+		Vs[flag[i]].emplace_back(i);
+	}
+	for (int i = 1; i <= maxF; i++)
+	{
+		if (!Vs[i].size())
+		{
+			continue;
+		}
+		int nowTOT = 0;
+		int minFLOW = INF;
+		for (int j = 0; j < Vs[i].size(); j++)
+		{
+			nowTOT += tip[Vs[i][j]];
+			SUMs[j] = nowTOT;
+			minFLOW = min(minFLOW, SUMs[j]);
+		}
+		if (nowTOT)
+		{
+			continue;
+		}
+		for (int j = 0; j < Vs[i].size(); j++)
+		{
+			if (SUMs[j] != minFLOW)
+			{
+				continue;
+			}
+			if (j < Vs[i].size() - 1)
+			{
+				++conquers[Vs[i][j] + 1];
+				--conquers[Vs[i][j + 1] + 1];
+			} else
+			{
+				++conquers[Vs[i][j] + 1];
+				--conquers[Vs[i][0] + 1];
+				++conquers[1];
+			}
+		}
+	}
+	for (int i = 2; i <= totN; i++)
+	{
+		conquers[i] += conquers[i - 1];
+	}
+	for (int i = 2; i <= totN; i++)
+	{
+		if (conquers[i] > conquers[ansW])
+		{
+			ansW = i;
+		}
+	}
+	write(ansW);
+	putchar(' ');
+	write(conquers[ansW]);
+	putchar('\n');
+	return 0;
 } //Thomitics Code
