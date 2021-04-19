@@ -46,74 +46,6 @@ void write(const long long &x)
         putchar(f[--s]);
     }
 }
-inline double dread()
-{
-    double r;
-    double x = 0, t = 0;
-    int s = 0, f = 1;
-    char c = getchar();
-    for (; !isdigit(c); c = getchar())
-    {
-        if (c == '-')
-        {
-            f = -1;
-        }
-        if (c == '.')
-        {
-            goto readt;
-        }
-    }
-    for (; isdigit(c) && c != '.'; c = getchar())
-    {
-        x = x * 10 + c - '0';
-    }
-readt:
-    for (; c == '.'; c = getchar())
-        ;
-    for (; isdigit(c); c = getchar())
-    {
-        t = t * 10 + c - '0';
-        ++s;
-    }
-    r = (x + t / pow(10, s)) * f;
-    return r;
-}
-
-inline void dwrite(long long x)
-{
-    if (x == 0)
-    {
-        putchar(48);
-        return;
-    }
-    int bit[20], p = 0, i;
-    for (; x; x /= 10)
-        bit[++p] = x % 10;
-    for (i = p; i > 0; --i)
-        putchar(bit[i] + 48);
-}
-inline void write(double x, int k)
-{
-    static int n = pow(10, k);
-    if (x == 0)
-    {
-        putchar('0');
-        putchar('.');
-        for (int i = 1; i <= k; ++i)
-            putchar('0');
-        return;
-    }
-    if (x < 0)
-        putchar('-'), x = -x;
-    long long y = (long long)(x * n) % n;
-    x = (long long)x;
-    dwrite(x), putchar('.');
-    int bit[10], p = 0, i;
-    for (; p < k; y /= 10)
-        bit[++p] = y % 10;
-    for (i = p; i > 0; i--)
-        putchar(bit[i] + 48);
-}
 
 long long totA;
 long long totB;
@@ -121,15 +53,15 @@ long long DPset[10][11];
 
 void DP()
 {
-    for (int i = 1; i <= 9; i++)
+    for (int i = 0; i <= 9; i++)
     {
         DPset[1][i] = 1;
     }
     for (int i = 2; i <= 9; i++)
     {
-        for (int j = 0; j < 9; ++j)
+        for (int j = 0; j <= 9; ++j)
         {
-            for (int k = 0; k < 9; ++k)
+            for (int k = 0; k <= 9; ++k)
             {
                 if (abs(j - k) >= 2)
                 {
@@ -181,10 +113,12 @@ long long GetSum(int x)
                 totANS += DPset[i][j];
             }
         }
+        /*
         if (abs(partedNUM[i + 1] - partedNUM[i]) < 2)
         {
             break;
         }
+        */
     }
     return totANS;
 }
@@ -194,6 +128,6 @@ int main()
     totA = read();
     totB = read();
     DP();
-    write(GetSum(totB+1) - GetSum(totA - 1));
+    write(GetSum(totB + 1) - GetSum(totA));
     return 0;
 } //Thomitics Code
