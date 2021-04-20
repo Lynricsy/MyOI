@@ -1,0 +1,3 @@
+C:/Users/Thomitics/MyOI/codeforces/CF372C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Thomitics/MyOI/codeforces/CF372C/cmake-build-debug/CMakeFiles/CF372C.dir
+C:/Users/Thomitics/MyOI/codeforces/CF372C/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,17 @@
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: C:/Users/Thomitics/MyOI/Luogu/P3372/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):nmake /nologo cmTC_68bed\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_68bed.dir\build.make /nologo -L                  CMakeFiles\cmTC_68bed.dir\build
+Building C object CMakeFiles/cmTC_68bed.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\cl.exe @C:\Users\THOMIT~1\AppData\Local\Temp\nm6DFA.tmp
+CMakeCCompilerABI.c
+Linking C executable cmTC_68bed.exe
+	"C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_68bed.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\Preview\VC\Tools\MSVC\1429~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_68bed.dir\objects1.rsp @C:\Users\THOMIT~1\AppData\Local\Temp\nm6FE0.tmp
+NMAKE : fatal error U1045: 生成失败: Permission denied
+Stop.
+NMAKE : fatal error U1077: “"C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\bin\HostX86\x86\nmake.exe"”: 返回代码“0x2”
+Stop.
+
+
+
+
