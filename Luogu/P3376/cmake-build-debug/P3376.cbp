@@ -8,86 +8,84 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Thomatics/myoi/P3376/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Thomitics/MyOI/Luogu/P3376/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Thomatics/myoi/P3376/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Thomitics/MyOI/Luogu/P3376/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="P3376">
-				<Option output="C:/Users/Thomatics/myoi/P3376/cmake-build-debug/P3376.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Thomatics/myoi/P3376/cmake-build-debug"/>
+				<Option output="C:/Users/Thomitics/MyOI/Luogu/P3376/cmake-build-debug/P3376.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Thomitics/MyOI/Luogu/P3376/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\ATLMFC\include"/>
-					<Add directory="D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\ucrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\shared"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\um"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\winrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 P3376"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 P3376"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="P3376/fast">
-				<Option output="C:/Users/Thomatics/myoi/P3376/cmake-build-debug/P3376.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Thomatics/myoi/P3376/cmake-build-debug"/>
+				<Option output="C:/Users/Thomitics/MyOI/Luogu/P3376/cmake-build-debug/P3376.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Thomitics/MyOI/Luogu/P3376/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\ATLMFC\include"/>
-					<Add directory="D:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.28.29812\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\ucrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\shared"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\um"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\winrt"/>
-					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Preview\VC\Tools\MSVC\14.29.29917\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 P3376/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 P3376/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Thomatics/myoi/P3376/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Thomitics/MyOI/Luogu/P3376/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\Thomatics\myoi\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Thomitics\MyOI\Luogu\P3376\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Thomatics/myoi/P3376/main.cpp">
+		<Unit filename="C:/Users/Thomitics/MyOI/Luogu/P3376/main.cpp">
 			<Option target="P3376"/>
 		</Unit>
-		<Unit filename="C:/Users/Thomatics/myoi/P3376/CMakeLists.txt">
+		<Unit filename="C:/Users/Thomitics/MyOI/Luogu/P3376/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

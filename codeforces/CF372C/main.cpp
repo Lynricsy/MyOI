@@ -331,8 +331,14 @@ void DPing()
 	for (int i = 1; i <= totM; ++i)
 	{
 		memset(DP[flag], -0x3f, sizeof(DP[flag]));
+		int k = 1;
 		for (int j = 1; j <= totN; j++)
 		{
+			for (; k <= j + ((T[i] - T[i - 1]) * totD); ++k)
+			{
+				while (!Q.empty() && DP[!flag][k] >= DP[!flag][Q.back()])
+					Q.pop_back();
+			}
 			while (!Q.empty() && Q.front() < j - (T[i] - T[i - 1]) * totD) Q.pop_front();
 //			while(!Q.empty()&&Q.front()<j+(T[i]-T[i-1])*totD) Q.pop_front();
 			while (!Q.empty() && DP[!flag][j] >= DP[!flag][Q.back()]) Q.pop_back();

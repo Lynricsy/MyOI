@@ -1,0 +1,3 @@
+C:/Users/Thomitics/MyOI/codeforces/CF545E/cmake-build-debug/CMakeFiles/CF545E.dir
+C:/Users/Thomitics/MyOI/codeforces/CF545E/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Thomitics/MyOI/codeforces/CF545E/cmake-build-debug/CMakeFiles/rebuild_cache.dir
