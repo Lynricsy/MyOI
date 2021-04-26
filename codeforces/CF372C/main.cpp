@@ -7,12 +7,12 @@ using namespace std;
 inline long long read()
 {
 	long long x = 0;
-	int f = 1;
+	int DP = 1;
 	char ch = getchar();
 	while (ch < '0' || ch > '9')
 	{
 		if (ch == '-')
-			f = -1;
+			DP = -1;
 		ch = getchar();
 	}
 	while (ch >= '0' && ch <= '9')
@@ -20,7 +20,7 @@ inline long long read()
 		x = (x << 1) + (x << 3) + (ch ^ 48);
 		ch = getchar();
 	}
-	return x * f;
+	return x * DP;
 }
 void write(const long long &x)
 {
@@ -29,7 +29,7 @@ void write(const long long &x)
 		putchar('0');
 		return;
 	}
-	char f[100];
+	char DP[100];
 	long long tmp = x;
 	if (tmp < 0)
 	{
@@ -39,25 +39,25 @@ void write(const long long &x)
 	long long s = 0;
 	while (tmp > 0)
 	{
-		f[s++] = tmp % 10 + '0';
+		DP[s++] = tmp % 10 + '0';
 		tmp /= 10;
 	}
 	while (s > 0)
 	{
-		putchar(f[--s]);
+		putchar(DP[--s]);
 	}
 }
 inline double dread()
 {
 	double r;
 	double x = 0, t = 0;
-	int s = 0, f = 1;
+	int s = 0, DP = 1;
 	char c = getchar();
 	for (; !isdigit(c); c = getchar())
 	{
 		if (c == '-')
 		{
-			f = -1;
+			DP = -1;
 		}
 		if (c == '.')
 		{
@@ -76,7 +76,7 @@ inline double dread()
 		t = t * 10 + c - '0';
 		++s;
 	}
-	r = (x + t / pow(10, s)) * f;
+	r = (x + t / pow(10, s)) * DP;
 	return r;
 }
 
@@ -194,12 +194,12 @@ using namespace std;
 inline long long read()
 {
 	long long x = 0;
-	int f = 1;
+	int DP = 1;
 	char ch = getchar();
 	while (ch < '0' || ch > '9')
 	{
 		if (ch == '-')
-			f = -1;
+			DP = -1;
 		ch = getchar();
 	}
 	while (ch >= '0' && ch <= '9')
@@ -207,7 +207,7 @@ inline long long read()
 		x = (x << 1) + (x << 3) + (ch ^ 48);
 		ch = getchar();
 	}
-	return x * f;
+	return x * DP;
 }
 void write(const long long &x)
 {
@@ -216,7 +216,7 @@ void write(const long long &x)
 		putchar('0');
 		return;
 	}
-	char f[100];
+	char DP[100];
 	long long tmp = x;
 	if (tmp < 0)
 	{
@@ -226,25 +226,25 @@ void write(const long long &x)
 	long long s = 0;
 	while (tmp > 0)
 	{
-		f[s++] = tmp % 10 + '0';
+		DP[s++] = tmp % 10 + '0';
 		tmp /= 10;
 	}
 	while (s > 0)
 	{
-		putchar(f[--s]);
+		putchar(DP[--s]);
 	}
 }
 inline double dread()
 {
 	double r;
 	double x = 0, t = 0;
-	int s = 0, f = 1;
+	int s = 0, DP = 1;
 	char c = getchar();
 	for (; !isdigit(c); c = getchar())
 	{
 		if (c == '-')
 		{
-			f = -1;
+			DP = -1;
 		}
 		if (c == '.')
 		{
@@ -263,7 +263,7 @@ inline double dread()
 		t = t * 10 + c - '0';
 		++s;
 	}
-	r = (x + t / pow(10, s)) * f;
+	r = (x + t / pow(10, s)) * DP;
 	return r;
 }
 
