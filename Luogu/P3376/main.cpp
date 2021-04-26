@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define INF 999999999
 
 using namespace std;
 
@@ -7,7 +8,7 @@ inline long long read()
 	long long x = 0;
 	int f = 1;
 	char ch = getchar();
-	while (ch < '0' || ch>'9')
+	while (ch < '0' || ch > '9')
 	{
 		if (ch == '-')
 			f = -1;
@@ -20,7 +21,7 @@ inline long long read()
 	}
 	return x * f;
 }
-void write(const long long& x)
+void write(const long long &x)
 {
 	if (!x)
 	{
@@ -48,32 +49,33 @@ void write(const long long& x)
 inline double dread()
 {
 	double r;
-	double x=0,t=0;
-	int s=0,f=1;
-	char c=getchar();
-	for (;!isdigit(c);c=getchar())
+	double x = 0, t = 0;
+	int s = 0, f = 1;
+	char c = getchar();
+	for (; !isdigit(c); c = getchar())
 	{
-		if (c=='-')
+		if (c == '-')
 		{
-			f=-1;
+			f = -1;
 		}
-		if (c=='.')
+		if (c == '.')
 		{
 			goto readt;
 		}
 	}
-	for (;isdigit(c)&&c!='.';c=getchar())
+	for (; isdigit(c) && c != '.'; c = getchar())
 	{
-		x=x*10+c-'0';
+		x = x * 10 + c - '0';
 	}
 	readt:
-	for (;c=='.';c=getchar());
-	for (;isdigit(c);c=getchar())
+	for (; c == '.'; c = getchar())
+		;
+	for (; isdigit(c); c = getchar())
 	{
-		t=t*10+c-'0';
+		t = t * 10 + c - '0';
 		++s;
 	}
-	r=(x+t/pow(10,s))*f;
+	r = (x + t / pow(10, s)) * f;
 	return r;
 }
 
@@ -90,7 +92,7 @@ inline void dwrite(long long x)
 	for (i = p; i > 0; --i)
 		putchar(bit[i] + 48);
 }
-inline void write(double x,int k)
+inline void write(double x, int k)
 {
 	static int n = pow(10, k);
 	if (x == 0)
@@ -101,9 +103,10 @@ inline void write(double x,int k)
 			putchar('0');
 		return;
 	}
-	if (x < 0) putchar('-'), x = -x;
-	long long y = (long long) (x * n) % n;
-	x = (long long) x;
+	if (x < 0)
+		putchar('-'), x = -x;
+	long long y = (long long)(x * n) % n;
+	x = (long long)x;
 	dwrite(x), putchar('.');
 	int bit[10], p = 0, i;
 	for (; p < k; y /= 10)
@@ -112,70 +115,10 @@ inline void write(double x,int k)
 		putchar(bit[i] + 48);
 }
 
-bool vis[10090];
-int totN,totM,totS,totT;
-long long head[10090];
-struct Edge
-{
-	int to,nxt;
-	long long val;
-}edges[20090];
-long long cnt=1;
-
-void add_edge(int x,int y,long  long w)
-{
-	++cnt;
-	edges[cnt].to=y;
-	edges[cnt].val=w;
-	edges[cnt].nxt=head[x];
-	head[x]=cnt;
-}
-
-long long DFS(int nowX,long long flow)
-{
-	if (nowX == totT)
-	{
-		return flow;
-	}
-	vis[nowX] = true;
-	for (int i = head[nowX]; i; i = edges[i].nxt)
-	{
-		int y = edges[i].to;
-		if ((!edges[i].val) || vis[y])
-		{
-			continue;
-		}
-		int res = 0;
-		if ((res = DFS(y, min(flow, edges[i].val))) > 0)
-		{
-			edges[i].val -= res;
-			edges[i ^ 1].val += res;
-			return res;
-		}
-	}
-	return 0;
-}
+long long totN;
 
 int main()
 {
-	totN=read();
-	totM=read();
-	totS=read();
-	totT=read();
-	for (long long i = 1,x,y,w; i <= totM; ++i)
-	{
-		x=read();
-		y=read();
-		w=read();
-		add_edge(x,y,w);
-		add_edge(y,x,0);
-	}
-	long long res=0;
-	long long tot=0;
-	while (memset(vis,0, sizeof(vis))&&((res=DFS(totS,1E18))>0))
-	{
-		tot+=res;
-	}
-	write(tot);
+
 	return 0;
-}//LikiBlaze Code
+} //Thomitics Code
