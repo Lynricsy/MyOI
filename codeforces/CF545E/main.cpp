@@ -123,14 +123,13 @@ struct Edge
 	int nxt;
 	int to;
 	long long val;
-}edges[300090];
-int head[300090];
+}edges[1000090];
+int head[1000090];
 int cnt_edges;
-int pre[300090];
-long long dis[300090];
-bool vis[300090];
+int pre[1000090];
+long long dis[1000090];
+bool vis[1000090];
 long long totANS;
-int pres[300090];
 void add_edges(int x,int y,long long w)
 {
 	++cnt_edges;
@@ -139,19 +138,24 @@ void add_edges(int x,int y,long long w)
 	edges[cnt_edges].to = y;
 	edges[cnt_edges].val = w;
 }
-bool operator<(Edge a,Edge b)
+struct Node
 {
-	return a.val < b.val;
+	long long ID;
+	long long dis;
+};
+bool operator<(Node a,Node b)
+{
+	return a.dis>b.dis;
 }
-priority_queue<long long > Q;
+priority_queue<Node > Q;
 void Dijstra()
 {
 	memset(dis, 0x3f, sizeof dis);
 	dis[totS] = 0;
-	Q.push(totS);
+	Q.push({totS,dis[totS]});
 	while (!Q.empty())
 	{
-		long long nowX = Q.top();
+		long long nowX = Q.top().ID;
 		Q.pop();
 		if (vis[nowX])
 		{
@@ -164,7 +168,10 @@ void Dijstra()
 			{
 				pre[edges[i].to] = i;
 				dis[edges[i].to] = dis[nowX] + edges[i].val;
-				Q.push(edges[i].to);
+				if (!vis[edges[i].to])
+				{
+					Q.push({edges[i].to,dis[edges[i].to]});
+				}
 			}
 			if ((dis[edges[i].to] == dis[nowX] + edges[i].val) && (edges[i].val < edges[pre[edges[i].to]].val))
 			{
