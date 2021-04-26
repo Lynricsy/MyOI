@@ -122,15 +122,15 @@ struct Edge
 	int nxt;
 	int to;
 }edges[4000090];
-int head[2000090];
+int head[4000090];
 int cnt_edges;
-int dfn[2000090];
-int low[2000090];
-int cntSCC;
+int dfn[4000090];
+int low[4000090];
+int cntSCC=1;
 int DFScnt;
-int inSCC[2000090];
+int inSCC[4000090];
 stack<int> Stacking;
-bool inQ[2000090];
+bool inQ[4000090];
 void add_edges(int x,int y)
 {
 	++cnt_edges;
@@ -151,7 +151,7 @@ void Tarjan(int nowX)
 		{
 			Tarjan(edges[i].to);
 			low[nowX] = min(low[edges[i].to], low[nowX]);
-		} else if (inQ[nowX])
+		} else if (inQ[edges[i].to])
 		{
 			low[nowX] = min(dfn[edges[i].to], low[nowX]);
 		}
@@ -159,18 +159,23 @@ void Tarjan(int nowX)
 	if (dfn[nowX] == low[nowX])
 	{
 		++cntSCC;
-		while (Stacking.top() != nowX && !Stacking.empty())
+		int y;
+		do
 		{
-			inQ[Stacking.top()] = false;
-			inSCC[Stacking.top()] = cntSCC;
-			Stacking.pop();
-		}
-		inSCC[Stacking.top()] = cntSCC;
-		inQ[Stacking.top()] = false;
-		if (!Stacking.empty())
-		{
-			Stacking.pop();
-		}
+			if(!Stacking.empty())
+			{
+				y=Stacking.top();
+				inQ[y] = false;
+				inSCC[y] = cntSCC;
+				Stacking.pop();
+			}
+		} while (!Stacking.empty() && y != nowX );
+//		inSCC[Stacking.top()] = cntSCC;
+//		inQ[Stacking.top()] = false;
+//		if (!Stacking.empty())
+//		{
+//			Stacking.pop();
+//		}
 	}
 }
 
@@ -186,25 +191,25 @@ int main()
 		t = read();
 		if ((!s) && (!t))
 		{
-			add_edges(x, y + totN);
-			add_edges(y, x + totN);
+			add_edges(x + totN, y);
+			add_edges(y + totN, x);
 		} else if (s && t)
 		{
-			add_edges(y + totN, x);
-			add_edges(x + totN, y);
+			add_edges(y, x + totN);
+			add_edges(x, y + totN);
 		} else if ((!s) && t)
-		{
-			add_edges(y + totN, x + totN);
-			add_edges(x, y);
-		} else if (s && (!t))
 		{
 			add_edges(y, x);
 			add_edges(x + totN, y + totN);
+		} else if (s && (!t))
+		{
+			add_edges(y + totN, x + totN);
+			add_edges(x, y);
 		}
 	}
 	for (int i = 1; i <= totN * 2; ++i)
 	{
-		if (!dfn[i])
+		if ((!dfn[i]))
 		{
 			Tarjan(i);
 		}
@@ -220,7 +225,7 @@ int main()
 	puts("POSSIBLE\n");
 	for (int i = 1; i <= totN; ++i)
 	{
-		if (inSCC[i] < inSCC[i + totN])
+		if (inSCC[i] > inSCC[i + totN])
 		{
 			putchar('1');
 			putchar(' ');
