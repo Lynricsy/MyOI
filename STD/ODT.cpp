@@ -67,7 +67,7 @@ inline double dread()
 	{
 		x = x * 10 + c - '0';
 	}
-	readt:
+readt:
 	for (; c == '.'; c = getchar())
 		;
 	for (; isdigit(c); c = getchar())
@@ -117,19 +117,18 @@ inline void write(double x, int k)
 
 struct Node
 {
-	int l,r;
+	int l, r;
 	mutable long long val;
-	Node(int L,int R=-1,int w=0)
+	Node(int L, int R = -1, int w = 0)
 	{
-		l=L;
-		r=R;
-		val=w;
+		l = L;
+		r = R;
+		val = w;
 	}
-
 };
-bool operator<(Node ap,Node bp)
+bool operator<(Node ap, Node bp)
 {
-	return ap.l<bp.l;
+	return ap.l < bp.l;
 }
 set<Node> ODT;
 auto split(int pos)
@@ -147,7 +146,7 @@ auto split(int pos)
 	ODT.insert(Node(L, pos - 1, w));
 	return ODT.insert(Node(pos, R, w)).first;
 }
-void assign(int L,int R,int w)
+void assign(int L, int R, int w)
 {
 	auto initL = split(L);
 	auto initR = split(R + 1);
