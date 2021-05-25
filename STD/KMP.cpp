@@ -21,7 +21,7 @@ inline long long read()
     }
     return x * f;
 }
-void write(const long long &x)
+inline void write(const long long &x)
 {
     if (!x)
     {
@@ -46,83 +46,16 @@ void write(const long long &x)
         putchar(f[--s]);
     }
 }
-inline double dread()
-{
-    double r;
-    double x = 0, t = 0;
-    int s = 0, f = 1;
-    char c = getchar();
-    for (; !isdigit(c); c = getchar())
-    {
-        if (c == '-')
-        {
-            f = -1;
-        }
-        if (c == '.')
-        {
-            goto readt;
-        }
-    }
-    for (; isdigit(c) && c != '.'; c = getchar())
-    {
-        x = x * 10 + c - '0';
-    }
-readt:
-    for (; c == '.'; c = getchar())
-        ;
-    for (; isdigit(c); c = getchar())
-    {
-        t = t * 10 + c - '0';
-        ++s;
-    }
-    r = (x + t / pow(10, s)) * f;
-    return r;
-}
 
-inline void dwrite(long long x)
-{
-    if (x == 0)
-    {
-        putchar(48);
-        return;
-    }
-    int bit[20], p = 0, i;
-    for (; x; x /= 10)
-        bit[++p] = x % 10;
-    for (i = p; i > 0; --i)
-        putchar(bit[i] + 48);
-}
-inline void write(double x, int k)
-{
-    static int n = pow(10, k);
-    if (x == 0)
-    {
-        putchar('0');
-        putchar('.');
-        for (int i = 1; i <= k; ++i)
-            putchar('0');
-        return;
-    }
-    if (x < 0)
-        putchar('-'), x = -x;
-    long long y = (long long)(x * n) % n;
-    x = (long long)x;
-    dwrite(x), putchar('.');
-    int bit[10], p = 0, i;
-    for (; p < k; y /= 10)
-        bit[++p] = y % 10;
-    for (i = p; i > 0; i--)
-        putchar(bit[i] + 48);
-}
-
-char A[100090], B[100090];
-long long KMP[100090];
+const int MAXN=1000090;
+char A[MAXN], B[MAXN];
+long long KMP[MAXN];
 long long LA, LB;
 
 void prefix()
 {
     int j = 0;
-    for (int i = 1; i <= LB; ++i)
+    for (int i = 2; i <= LB; ++i)
     {
         while (j && (B[i] != B[j + 1]))
         {
@@ -151,7 +84,7 @@ void check()
         }
         if (j==LB)
         {
-            write(LA-j+1);
+            write(i-LB+1);
             putchar('\n');
             j=KMP[j];
         }
@@ -160,15 +93,16 @@ void check()
 
 int main()
 {
-    cin >> A + 1;
-    cin >> B + 1;
-    LA = strlen(A);
-    LB = strlen(B);
+    scanf("%s",A+1);
+    scanf("%s",B+1);
+    LA = strlen(A+1);
+    LB = strlen(B+1);
     prefix();
     check();
     for (int i = 1; i <= LB; i++)
     {
-        printf("%lld ",KMP[i]);
+        write(KMP[i]);
+        putchar(' ');
     }
     return 0;
 } //Thomitics Code
