@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define INF 0x3f3f3f3f3f3f3f3f
+#define INF 999999999
 
 using namespace std;
 
@@ -115,97 +115,97 @@ inline void write(double x, int k)
 		putchar(bit[i] + 48);
 }
 
-const long long maxN=100090;
+const long long maxN = 100090;
 long long totN;
 long long totM;
-long long totS;
 long long totT;
-long long cnt=1;
-long long head[maxN*3];
+long long totS;
+long long head[maxN];
+long long cnt_edges = 1;
 long long DIS[maxN];
-long long now[maxN];
-long long totFLOW;
+bool vis[maxN];
+long long incf[maxN];
+long long pre[maxN];
+long long maxFLOW;
+long long minCOST;
 
 struct Edge
 {
 	long long nxt;
 	long long to;
+	long long flow;
 	long long val;
 }edges[maxN*3];
 
-void add_edge(long long x,long long y,long long w)
+inline void add_edge(long long x,long long y,long long f,long long w)
 {
-	++cnt;
-	edges[cnt].nxt = head[x];
-	head[x] = cnt;
-	edges[cnt].to = y;
-	edges[cnt].val = w;
+	++cnt_edges;
+	edges[cnt_edges].nxt = head[x];
+	head[x] = cnt_edges;
+	edges[cnt_edges].to = y;
+	edges[cnt_edges].val = w;
+	edges[cnt_edges].flow = f;
 
-	++cnt;
-	edges[cnt].nxt = head[y];
-	head[y] = cnt;
-	edges[cnt].to = x;
-	edges[cnt].val = 0;
+	++cnt_edges;
+	edges[cnt_edges].nxt = head[y];
+	head[y] = cnt_edges;
+	edges[cnt_edges].to = x;
+	edges[cnt_edges].val = -w;
+	edges[cnt_edges].flow = 0;
 }
 
-bool BFS()
+inline bool SPFA()
 {
+	memset(vis, 0, sizeof vis);
 	memset(DIS, 0x3f, sizeof DIS);
 	queue<long long> Q;
+	vis[totS] = true;
+	DIS[totS]=0;
 	Q.push(totS);
-	DIS[totS] = 0;
-	now[totS] = head[totS];
 	while (!Q.empty())
 	{
 		int x = Q.front();
 		Q.pop();
 		for (int i = head[x]; i; i = edges[i].nxt)
 		{
-			int vir = edges[i].to;
-			if ((DIS[vir] != INF) || (!edges[i].val))
+			if (!edges[i].flow)
 			{
 				continue;
 			}
-			Q.push(vir);
-			DIS[vir] = DIS[x] + 1;
-			now[vir] = head[vir];
-			if (vir == totT)
+			long long ver=edges[i].to;
+			if (DIS[ver]>edges[i].val+DIS[x])
 			{
-				return true;
+				pre[ver]=i;
+				incf[ver]=min(incf[x],edges[i].flow);
+				if (!vis[ver])
+				{
+					Q.push(ver);
+				}
 			}
 		}
 	}
-	return false;
-}
-inline long long DFS(long long x,long long inFLOW)
-{
-	if (x == totT || !inFLOW)
+	if (DIS[totT]==0x3f3f3f3f3f3f3f3f)
 	{
-		return inFLOW;
+		return false;
 	}
-	long long nowOUT, outFLOW = 0;
-	for (int i = now[x]; i && inFLOW; i = edges[i].nxt)
+	return true;
+}
+
+void MCMF()
+{
+	while (SPFA())
 	{
-		now[x] = i;
-		int vir = edges[i].to;
-		if ((DIS[vir] == DIS[x] + 1) && (edges[i].val))
+		long long ti=totT;
+		maxFLOW+=incf[totT];
+		minCOST+=incf[totT]*DIS[totT];
+		while (ti!=totS)
 		{
-			nowOUT = DFS(vir, min(edges[i].val, inFLOW));
-//			if (!nowOUT)
-//			{
-//				DIS[vir] = INF;
-//			}
-			edges[i].val -= nowOUT;
-			edges[i ^ 1].val += nowOUT;
-			outFLOW += nowOUT;
-			inFLOW -= nowOUT;
+			int nowEDGE=pre[ti];
+			edges[nowEDGE].flow-=totT;
+			edges[nowEDGE^1].flow+=totT;
+			ti=edges[nowEDGE^1].to;
 		}
 	}
-	if (!outFLOW)
-	{
-		DIS[x] = 0;
-	}
-	return outFLOW;
 }
 
 int main()
@@ -214,17 +214,17 @@ int main()
 	totM = read();
 	totS = read();
 	totT = read();
-	for (int i = 1, x, y, w; i <= totM; ++i)
+	for (int i = 1, x, y, w, f; i <= totM; ++i)
 	{
 		x = read();
 		y = read();
+		f = read();
 		w = read();
-		add_edge(x, y, w);
+		add_edge(x, y, f, w);
 	}
-	while (BFS())
-	{
-		totFLOW += DFS(totS, INF);
-	}
-	write(totFLOW);
+	MCMF();
+	write(maxFLOW);
+	putchar('\n');
+	write(minCOST);
 	return 0;
 } //Thomitics Code
