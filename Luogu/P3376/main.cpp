@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define INF 999999999
+#define INF 0x3f3f3f3f3f3f3f3f
 
 using namespace std;
 
@@ -115,10 +115,112 @@ inline void write(double x, int k)
 		putchar(bit[i] + 48);
 }
 
+const long long maxN=100090;
 long long totN;
+long long totM;
+long long totS;
+long long totT;
+long long cnt=1;
+long long head[maxN*3];
+long long DIS[maxN];
+long long now[maxN];
+long long totFLOW;
+
+struct Edge
+{
+	long long nxt;
+	long long to;
+	long long val;
+}edges[maxN*3];
+
+void add_edge(long long x,long long y,long long w)
+{
+	++cnt;
+	edges[cnt].nxt=head[x];
+	head[x]=cnt;
+	edges[cnt].to=y;
+	edges[cnt].val=w;
+
+	++cnt;
+	edges[cnt].nxt=head[y];
+	head[y]=cnt;
+	edges[cnt].to=x;
+	edges[cnt].val=w;
+}
+
+bool BFS()
+{
+	memset(DIS, 0x3f, sizeof DIS);
+	queue<long long> Q;
+	Q.push(totS);
+	DIS[totS] = 0;
+	now[totS] = head[totS];
+	while (!Q.empty())
+	{
+		int x = Q.front();
+		Q.pop();
+		for (int i = head[x]; i; i = edges[i].nxt)
+		{
+			int vir = edges[i].to;
+			if ((DIS[vir] != INF) || (!edges[i].val))
+			{
+				continue;
+			}
+			Q.push(vir);
+			DIS[vir] = DIS[x] + 1;
+			now[vir] = head[vir];
+			if (vir == totT)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+inline long long DFS(long long x,long long nowFLOW)
+{
+	if (x==totT)
+	{
+		return nowFLOW;
+	}
+	long long dotRES,res=0;
+	for (int i = now[x]; i && nowFLOW; i = edges[i].nxt)
+	{
+		now[x]=i;
+		int vir=edges[i].to;
+		if ((DIS[vir]==DIS[x]+1)&&(edges[i].val))
+		{
+			dotRES=DFS(vir,min(edges[i].val,nowFLOW));
+			if(!dotRES)
+			{
+				DIS[x]=INF;
+			}
+			edges[i].val-=dotRES;
+			edges[i^1].val+=dotRES;
+			res+=dotRES;
+			nowFLOW-=dotRES;
+		}
+	}
+	return res;
+}
 
 int main()
 {
-
+	totN=read();
+	totM=read();
+	totS=read();
+	totT=read();
+	for (int i = 1,x,y,w; i <= totM; ++i)
+	{
+		x=read();
+		y=read();
+		w=read();
+		add_edge(x,y,w);
+	}
+	while (BFS())
+	{
+		totFLOW+=DFS(totS,INF);
+	}
+	write(totFLOW);
 	return 0;
 } //Thomitics Code
