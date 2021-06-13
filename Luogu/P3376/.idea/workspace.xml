@@ -12,208 +12,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="afe9e5fc-0253-4f56-b609-648cbcddf78d" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/../P2120/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/.idea/P2120.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/P2120.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/P2120.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/P2120.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/P2120.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/P2120.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/P2120.dir/objects1.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/P2120.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/P2120.cbp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P2120/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/.idea/P3195.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/CXX.includecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/depend.internal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/embed.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/intermediate.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/main.cpp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/manifest.rc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/manifest.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/objects1.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/P3195.dir/vc140.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/P3195.cbp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/P3195.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/P3195.ilk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/P3195.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3195/main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/.idea/P4360.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/CXX.includecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/DependInfo.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/build.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/cmake_clean.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/depend.internal" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/depend.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/embed.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/flags.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/intermediate.manifest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/main.cpp.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/manifest.rc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/manifest.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/objects1.rsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/progress.make" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/P4360.dir/vc140.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/P4360.cbp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/P4360.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/P4360.ilk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/P4360.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../P4360/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" afterPath="$PROJECT_DIR$/../P3195/cmake-build-debug/CMakeFiles/CMakeError.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3372/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../P3372/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/CXX.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/depend.internal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/embed.manifest" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/intermediate.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/manifest.rc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/manifest.res" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/P3376.dir/vc140.pdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/P3376.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/P3376.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/P3376.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/P3376.ilk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/P3376.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CF372C.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CF372C.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CF372C.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CF372C.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CF372C.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CF372C.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CMakeFiles/CF372C.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CMakeFiles/CF372C.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CMakeFiles/CF372C.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/CMakeFiles/CF372C.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../codeforces/CF372C/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../codeforces/CF372C/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../codeforces/CF372C/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P5410/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../P5410/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,14 +72,20 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.C:/Users/Thomitics/MyOI/Luogu/P3376">
     <configuration name="P3376" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="P3376" TARGET_NAME="P3376" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="P3376" RUN_TARGET_NAME="P3376">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -258,6 +95,30 @@
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="C:/Users/Thomitics/MyOI/Luogu/P3376" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.C:/Users/Thomitics/MyOI/Luogu/P3376" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -269,10 +130,28 @@
       <updated>1619096533314</updated>
       <workItem from="1619096542069" duration="1337000" />
       <workItem from="1619173589084" duration="31000" />
+      <workItem from="1623495894518" duration="8905000" />
+      <workItem from="1623550795355" duration="2047000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>219</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="totFLOW" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
