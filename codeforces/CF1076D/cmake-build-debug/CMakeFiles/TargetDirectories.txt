@@ -1,0 +1,3 @@
+C:/Users/Thomitics/MyOI/codeforces/CF1076D/cmake-build-debug/CMakeFiles/CF1076D.dir
+C:/Users/Thomitics/MyOI/codeforces/CF1076D/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Thomitics/MyOI/codeforces/CF1076D/cmake-build-debug/CMakeFiles/rebuild_cache.dir

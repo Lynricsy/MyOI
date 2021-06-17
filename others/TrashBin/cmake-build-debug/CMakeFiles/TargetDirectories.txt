@@ -1,0 +1,3 @@
+C:/Users/Thomitics/MyOI/others/TrashBin/cmake-build-debug/CMakeFiles/TrashBin.dir
+C:/Users/Thomitics/MyOI/others/TrashBin/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Thomitics/MyOI/others/TrashBin/cmake-build-debug/CMakeFiles/rebuild_cache.dir
