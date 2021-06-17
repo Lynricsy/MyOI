@@ -2,8 +2,8 @@ struct Edge
 {
     int nxt;
     int to;
-}edges[100090];
-int head[100090];
+}edges[maxN];
+int head[maxN];
 int cnt_edges;
 void add_edges(int x,int y)
 {
