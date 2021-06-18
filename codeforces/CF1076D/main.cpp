@@ -115,14 +115,17 @@ inline void write(double x, int k)
 		putchar(bit[i] + 48);
 }
 
-const long long maxN=100090;
+const long long maxN = 500090;
 long long totN;
 long long totM;
 long long totK;
-int head[100090];
+int head[maxN];
 int cnt_edges;
-bool vis[100090];
+bool vis[maxN];
 long long DIS[maxN];
+long long pre[maxN];
+long long SUM;
+long long totS = 1;
 
 struct Edge
 {
@@ -140,10 +143,72 @@ void add_edge(int x,int y,int w)
 	edges[cnt_edges].val = w;
 }
 
+struct Node
+{
+	long long ID;
+	long long dis;
+};
+bool operator<(Node a , Node b)
+{
+	return a.dis>b.dis;
+}
+
 void Dijstra()
 {
-	memset(vis,0,sizeof vis);
+	memset(vis, 0, sizeof vis);
+	memset(DIS, 0x3f, sizeof DIS);
+	DIS[totS] = 0;
+	priority_queue<Node> Q;
+	Q.push({totS, 0});
+	while (!Q.empty())
+	{
+		long long nowX = Q.top().ID;
+		Q.pop();
+		if (vis[nowX])
+		{
+			continue;
+		}
+		vis[nowX] = true;
+		for (int i = head[nowX]; i; i = edges[i].nxt)
+		{
+			long long vir = edges[i].to;
+			if (DIS[vir] > DIS[nowX] + edges[i].val)
+			{
+				pre[vir] = i;
+				DIS[vir] = DIS[nowX] + edges[i].val;
+				if (!vis[vir])
+				{
+					Q.push({vir, DIS[vir]});
+				}
+			}
+			if ((DIS[vir] == DIS[nowX] + edges[i].val) && (edges[i].val < edges[pre[vir]].val))
+			{
+				pre[vir] = i;
+			}
+		}
+	}
+	memset(vis, 0, sizeof vis);
+}
 
+void DFS(long long nowX,long long fa)
+{
+	if (SUM == totK)
+	{
+		putchar('\n');
+		exit(0);
+	}
+	for (int i = head[nowX]; i; i = edges[i].nxt)
+	{
+		long long vir = edges[i].to;
+		if (vir == fa)
+		{
+			continue;
+		}
+		++SUM;
+		write((long long) ((pre[vir] + 1) / 2));
+		putchar(' ');
+		DFS(vir, nowX);
+	}
 }
 
 int main()
@@ -156,7 +221,12 @@ int main()
 		x = read();
 		y = read();
 		w = read();
-		add_edge(w, y, w);
+		add_edge(x, y, w);
+		add_edge(y, x, w);
 	}
+	Dijstra();
+	write((long long) min(totK, totN - 1));
+	putchar('\n');
+	DFS(1, 0);
 	return 0;
 } //Thomitics Code
