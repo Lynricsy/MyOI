@@ -1,0 +1,15 @@
+{
+    "configurations": [
+      {
+        "name": "Win32",
+        "includePath": ["${workspaceFolder}/**","C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.29.30130/include"],
+        "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
+        "windowsSdkVersion": "10.0.19041.0",
+        "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC/14.29.30130/bin/Hostx64/x64/cl.exe",
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "intelliSenseMode": "msvc-x64"
+      }
+    ],
+    "version": 4
+  }
