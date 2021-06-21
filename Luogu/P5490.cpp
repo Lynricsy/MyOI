@@ -152,16 +152,16 @@ struct Node
         }
         else
         {
-            len=lch->len + rch->len;
+            len = lch->len + rch->len;
         }
     }
     void update(long long L, long long R, long long c)
     {
-        if (l >= R || r <= L)
+        if (X[l] >= R || X[r + 1] <= L)
         {
             return;
         }
-        if (l >= L && r <= R)
+        if (X[l] >= L && X[r] <= R)
         {
             sum += c;
             push_up();
