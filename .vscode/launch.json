@@ -15,7 +15,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW32\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\GCC-64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",

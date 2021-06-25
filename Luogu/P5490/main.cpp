@@ -137,7 +137,6 @@ struct Node
 
 	Node(long long L, long long R)
 	{
-		printf("now [%lld, %lld]\n", L, R);
 		l = L;
 		r = R;
 		len = 0;
