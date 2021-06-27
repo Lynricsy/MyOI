@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define INF 999999999
-#define arand() rand()%114514
-#define mrg() merge(X,Y)
+#define arand() rand() % 114514
+#define mrg() rot = merge(X, Y)
 
 using namespace std;
 
@@ -150,7 +150,7 @@ long long merge(long long Atree, long long Btree)
 	}
 	else
 	{
-		nodes[Atree].lch = merge(nodes[Atree].lch, Btree);
+		nodes[Btree].lch = merge(Atree, nodes[Btree].lch);
 		update(Atree);
 		return Atree;
 	}
@@ -162,15 +162,19 @@ void split(long long splitX, long long K, long long &Xtree, long long &Ytree)
 	{
 		Xtree = Ytree = 0;
 	}
-	if (nodes[splitX].val <= K)
-	{
-		Xtree = splitX;
-		split(nodes[splitX].rch, K, nodes[splitX].rch, Ytree);
-	}
 	else
 	{
-		Ytree = splitX;
-		split(nodes[splitX].lch, K, Xtree, nodes[splitX].lch);
+		if (nodes[splitX].val <= K)
+		{
+			Xtree = splitX;
+			split(nodes[splitX].rch, K, nodes[splitX].rch, Ytree);
+		}
+		else
+		{
+			Ytree = splitX;
+			split(nodes[splitX].lch, K, Xtree, nodes[splitX].lch);
+		}
+		update(splitX);
 	}
 }
 long long Kth(long long KX, long long K)
@@ -187,7 +191,7 @@ long long Kth(long long KX, long long K)
 		}
 		else
 		{
-			K -= nodes[nodes[KX].lch].siz;
+			K -= nodes[nodes[KX].lch].siz + 1;
 			KX = nodes[KX].rch;
 		}
 	}
@@ -205,10 +209,10 @@ void insert(long long nowX)
 {
 	++cnt;
 	nodes[cnt].lch = nodes[cnt].rch = 0;
-	nodes[cnt].val = X;
-	nodes[cnt].siz = 0;
+	nodes[cnt].val = nowX;
+	nodes[cnt].siz = 1;
 	nodes[cnt].rnd = arand();
-	split(rot, nowX - 1, X, Y);
+	split(rot, nowX, X, Y); //试一试nowX
 	rot = merge(merge(X, cnt), Y);
 }
 
@@ -222,14 +226,52 @@ long long nxt(long long nowX)
 	split(rot, nowX, X, Y);
 	return Kth(Y, 1);
 }
+long long thK(long long nowX)
+{
+	split(rot, nowX - 1, X, Y);
+	return nodes[X].siz + 1;
+}
 
 int main()
 {
-	totN=read();
-	while(totN--)
+	totN = read();
+	int readX, readY;
+	while (totN--)
 	{
-		
+		readX = read();
+		readY = read();
+		if (readX == 1)
+		{
+			insert(readY);
+		}
+		else if (readX == 2)
+		{
+			del(readY);
+		}
+		else if (readX == 3)
+		{
+			write(thK(readY));
+			putchar('\n');
+			mrg();
+		}
+		else if (readX == 4)
+		{
+			write(nodes[Kth(rot, readY)].val);
+			putchar('\n');
+			mrg();
+		}
+		else if (readX == 5)
+		{
+			write(nodes[pre(readY)].val);
+			putchar('\n');
+			mrg();
+		}
+		else if (readX == 6)
+		{
+			write(nodes[nxt(readY)].val);
+			putchar('\n');
+			mrg();
+		}
 	}
-	
 	return 0;
 } //Thomitics Code
