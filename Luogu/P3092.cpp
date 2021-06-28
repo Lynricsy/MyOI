@@ -47,8 +47,25 @@ void write(const long long &x)
 	}
 }
 
+const long long maxN=100090;
+int totK;
+long long totN;
+long long K[maxN];
+long long C[maxN];
+long long DP[1<<17];
+
 int main()
 {
+    totN=read();
+    totK=read();
+    for (int i = 1; i <= totK; ++i)
+    {
+        K[i]=read();
+    }
+    for (int i = 1; i <= totN; ++i)
+    {
+        C[i]=read();
+    }
 
 	return 0;
 } //Thomitics Code

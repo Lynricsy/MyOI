@@ -50,12 +50,15 @@ void write(const long long &x)
 }
 
 const long long maxN = 1000090;
-
+long long totN;
+long long totL;
+long long totANS;
+long long raw[maxN << 1];
 struct Line
 {
 	long long l, r;
 	long long h;
-	short mark;
+	long long mark;
 } lines[maxN << 1];
 bool operator<(Line a, Line b)
 {
@@ -67,16 +70,13 @@ struct Node
 	long long sum;
 	long long len;
 } nodes[maxN << 2];
-
-long long X[maxN << 1];
-
 void build(long long nowX, long long L, long long R)
 {
 	nodes[nowX].l = L;
 	nodes[nowX].r = R;
-	nodes[nowX].len = 0;
 	nodes[nowX].sum = 0;
-	if (L == R)
+	nodes[nowX].len = 0;
+	if (L==R)
 	{
 		return;
 	}
@@ -88,7 +88,7 @@ void pushup(long long nowX)
 {
 	if (nodes[nowX].sum)
 	{
-		nodes[nowX].len = X[nodes[nowX].r + 1] - X[nodes[nowX].l];
+		nodes[nowX].len = raw[nodes[nowX].r + 1] - raw[nodes[nowX].l];
 	}
 	else
 	{
@@ -97,11 +97,13 @@ void pushup(long long nowX)
 }
 void update(long long nowX, long long L, long long R, long long C)
 {
-	if (X[nodes[nowX].r + 1] <= L || X[nodes[nowX].l] >= R)
+	long long l = nodes[nowX].l;
+	long long r = nodes[nowX].r;
+	if ((raw[l] >= R) || (raw[r + 1] <= L))
 	{
 		return;
 	}
-	if ((L <= X[nodes[nowX].l]) && (X[nodes[nowX].r + 1] <= R))
+	if ((raw[l] >= L) && (raw[r + 1] <= R))
 	{
 		nodes[nowX].sum += C;
 		pushup(nowX);
@@ -112,30 +114,26 @@ void update(long long nowX, long long L, long long R, long long C)
 	pushup(nowX);
 }
 
-long long totN;
-long long totL;
-long long totANS;
-
 int main()
 {
 	totN = read();
-	for (int i = 1, Xa, Ya, Xb, Yb; i <= totN; ++i)
+	for (int i = 1, Xa, Ya, Xb, Yb; i <= totN; i++)
 	{
 		Xa = read();
 		Ya = read();
 		Xb = read();
 		Yb = read();
-		X[2 * i - 1] = Xa;
-		X[2 * i] = Xb;
+		raw[2 * i - 1] = Xa;
+		raw[2 * i] = Xb;
 		lines[2 * i - 1] = {Xa, Xb, Ya, 1};
 		lines[2 * i] = {Xa, Xb, Yb, -1};
 	}
 	totN <<= 1;
 	sort(lines + 1, lines + totN + 1);
-	sort(X + 1, X + totN + 1);
-	totL = unique(X + 1, X + totN + 1) - (X + 1);
+	sort(raw + 1, raw + totN + 1);
+	totL = unique(raw + 1, raw + totN + 1) - (raw + 1);
 	build(1, 1, totL - 1);
-	for (int i = 1; i < totN; ++i)
+	for (int i = 1; i < totN; i++)
 	{
 		update(1, lines[i].l, lines[i].r, lines[i].mark);
 		totANS += nodes[1].len * (lines[i + 1].h - lines[i].h);
