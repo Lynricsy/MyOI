@@ -46,74 +46,6 @@ void write(const long long &x)
 		putchar(f[--s]);
 	}
 }
-inline double dread()
-{
-	double r;
-	double x = 0, t = 0;
-	int s = 0, f = 1;
-	char c = getchar();
-	for (; !isdigit(c); c = getchar())
-	{
-		if (c == '-')
-		{
-			f = -1;
-		}
-		if (c == '.')
-		{
-			goto readt;
-		}
-	}
-	for (; isdigit(c) && c != '.'; c = getchar())
-	{
-		x = x * 10 + c - '0';
-	}
-	readt:
-	for (; c == '.'; c = getchar())
-		;
-	for (; isdigit(c); c = getchar())
-	{
-		t = t * 10 + c - '0';
-		++s;
-	}
-	r = (x + t / pow(10, s)) * f;
-	return r;
-}
-
-inline void dwrite(long long x)
-{
-	if (x == 0)
-	{
-		putchar(48);
-		return;
-	}
-	int bit[20], p = 0, i;
-	for (; x; x /= 10)
-		bit[++p] = x % 10;
-	for (i = p; i > 0; --i)
-		putchar(bit[i] + 48);
-}
-inline void write(double x, int k)
-{
-	static int n = pow(10, k);
-	if (x == 0)
-	{
-		putchar('0');
-		putchar('.');
-		for (int i = 1; i <= k; ++i)
-			putchar('0');
-		return;
-	}
-	if (x < 0)
-		putchar('-'), x = -x;
-	long long y = (long long)(x * n) % n;
-	x = (long long)x;
-	dwrite(x), putchar('.');
-	int bit[10], p = 0, i;
-	for (; p < k; y /= 10)
-		bit[++p] = y % 10;
-	for (i = p; i > 0; i--)
-		putchar(bit[i] + 48);
-}
 
 const long long maxN = 100090;
 long long totN;
@@ -135,25 +67,26 @@ struct Node
 	long long l, r, sum;
 	long long len;
 
-	Node(long long L, long long R)
-	{
-		printf("now [%lld, %lld]\n", L, R);
-		l = L;
-		r = R;
-		len = 0;
-		sum = 0;
-		if (L == R) return;
-		long long Mid = (l + r) >> 1;
-		lch = new Node(L, Mid);
-		rch = new Node(Mid + 1, R);
-	}
+	// Node(long long L, long long R)
+	// {
+	// 	l = L;
+	// 	r = R;
+	// 	len = 0;
+	// 	sum = 0;
+	// 	if (L == R)
+	// 		return;
+	// 	long long Mid = (l + r) >> 1;
+	// 	lch = new Node(L, Mid);
+	// 	rch = new Node(Mid + 1, R);
+	// }
 
 	void push_up()
 	{
 		if (sum)
 		{
 			len = X[r + 1] - X[l];
-		} else
+		}
+		else
 		{
 			len = lch->len + rch->len;
 		}
@@ -176,6 +109,25 @@ struct Node
 		push_up();
 	}
 };
+Node Mem[(maxN << 1) + 20];
+Node *nowMEM = Mem;
+
+Node *New(long long L, long long R)
+{
+	Node *anewd = ++nowMEM;
+	anewd->l = L;
+	anewd->r = R;
+	anewd->len = 0;
+	anewd->sum = 0;
+	if (L == R)
+	{
+		return anewd;
+	}
+	long long Mid = (L + R) >> 1;
+	anewd->lch = New(L, Mid);
+	anewd->rch = New(Mid + 1, R);
+    return anewd;
+}
 
 int main()
 {
@@ -189,19 +141,18 @@ int main()
 		X[2 * i - 1] = Xa;
 		X[2 * i] = Xb;
 		lines[2 * i - 1] = {Xa, Xb, Ya, 1};
-		lines[2 * i ] = {Xa, Xb, Yb, -1};
+		lines[2 * i] = {Xa, Xb, Yb, -1};
 	}
 	totN <<= 1;
 	sort(lines + 1, lines + totN + 1);
 	sort(X + 1, X + totN + 1);
 	totT = unique(X + 1, X + totN + 1) - (X + 1);
-	Node *rot = new Node(1, totT - 1);
+	Node *rot = New(1, totT - 1);
 	for (int i = 1; i < totN; i++)
 	{
 		rot->update(lines[i].l, lines[i].r, lines[i].mark);
 		totANS += rot->len * (lines[i + 1].h - lines[i].h);
 	}
-	delete rot;
 	write(totANS);
 	return 0;
 } //Thomitics Code
