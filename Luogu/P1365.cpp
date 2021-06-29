@@ -47,29 +47,33 @@ void write(const long long &x)
 	}
 }
 
-const long long maxN = 100090;
-int totK;
+const long long maxN = 1000090;
 long long totN;
-long long K[maxN];
-long long C[maxN];
-long long DP[1 << 17];
-long long sum[maxN];
-long long totMONEY;
+char KICK[maxN];
+long double F;
+long double nowLEN;
 
 int main()
 {
 	totN = read();
-	totK = read();
-	for (int i = 1; i <= totK; ++i)
+	scanf("%s", KICK + 1);
+	for (int i = 1; i <= totN; i++)
 	{
-		K[i] = read();
-		totMONEY += K[i];
+		if (KICK[i] == '?')
+		{
+			F = F + nowLEN + 1.0 / 2.0;
+			nowLEN = (nowLEN + 1.0) / 2.0;
+		}
+		else if (KICK[i] == 'x')
+		{
+			nowLEN = 0;
+		}
+		else
+		{
+			F = F + nowLEN * 2.0 + 1.0;
+			nowLEN += 1.0;
+		}
 	}
-	for (int i = 1; i <= totN; ++i)
-	{
-		C[i] = read();
-		sum[i] = sum[i - 1] + C[i];
-	}
-
+	printf("%.4Lf", F);
 	return 0;
 } //Thomitics Code
