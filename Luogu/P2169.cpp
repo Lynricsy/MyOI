@@ -47,7 +47,7 @@ void write(const long long &x)
     }
 }
 
-const long long maxN = 100090;
+const long long maxN = 90;
 
 struct Edge
 {
@@ -125,28 +125,30 @@ void tarjan(long long nowX)
     if (dfn[nowX] == low[nowX])
     {
         ++cnt_SCC;
-        in_SCC[nowX] = cnt_SCC;
-        S.pop();
-        inSTACK[nowX] = false;
-        long long y = S.top();
+        long long y = -1;
         while (y != nowX)
         {
+            y = S.top();
             S.pop();
             in_SCC[y] = cnt_SCC;
             inSTACK[y] = false;
-            y = S.top();
         }
     }
 }
 void Dijstra()
 {
     memset(DIS, 0x3f, sizeof DIS);
-    DIS[1] = 0;
-    vis[1] = true;
+    DIS[totS] = 0;
     Q.push({1, 0});
     while (!Q.empty())
     {
         long long nowX = Q.top().ID;
+        Q.pop();
+        if (vis[nowX])
+        {
+            continue;
+        }
+        vis[nowX] = true;
         for (int i = SCChead[nowX]; i; i = SCCedges[i].nxt)
         {
             long long w = SCCedges[i].val;
@@ -183,7 +185,7 @@ int main()
     }
     for (long long i = 1; i <= totN; ++i)
     {
-        for (long long j = head[i]; j; j = edges[i].nxt)
+        for (long long j = head[i]; j; j = edges[j].nxt)
         {
             long long vir = edges[i].to;
             if (in_SCC[i] != in_SCC[vir])
