@@ -47,8 +47,7 @@ void write(const long long &x)
 	}
 }
 
-long long totN;
-long long totM;
+
 
 int main()
 {

@@ -47,7 +47,7 @@ void write(const long long &x)
     }
 }
 
-const long long maxN = 100090;
+const long long maxN = 1000090;
 char Sa[maxN];
 char Sb[maxN];
 long long KMP[maxN];
@@ -98,10 +98,17 @@ void suffix()
 
 int main()
 {
-    scanf("%s", Sa + 1);
     scanf("%s", Sb + 1);
-    LENa = strlen(Sa);
-    LENb = strlen(Sb);
+    scanf("%s", Sa + 1);
+    Sa[0]=34;
+    Sb[0]=34;
+    LENa = strlen(Sa)-1;
+    LENb = strlen(Sb)-1;
     prefix();
+    suffix();
+    for (int i = 1; i <= Stop; ++i)
+    {
+        putchar(Sb[Stacking[i]]);
+    }
     return 0;
 } //Thomitics Code
