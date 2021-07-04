@@ -64,6 +64,7 @@ struct Edge
 long long cnt_edges;
 long long head[maxN];
 long long DP[maxN][20];
+long long totMIN = INF;
 void add_edge(long long x, long long y)
 {
     ++cnt_edges;
@@ -81,17 +82,18 @@ void DFS(long long nowX, long long fath)
         {
             continue;
         }
-        DFS(vir, fath);
+        DFS(vir, nowX);
         for (int j = 1; j <= 15; ++j)
         {
+            long long nowMIN = INF;
             for (int k = 1; k <= 15; ++k)
             {
                 if (j != k)
                 {
-                    DP[nowX][j] += DP[vir][k];
+                    nowMIN = min(DP[vir][k], nowMIN);
                 }
             }
-
+            DP[nowX][j] += nowMIN;
         }
     }
 }
@@ -99,7 +101,7 @@ void DFS(long long nowX, long long fath)
 int main()
 {
     totN = read();
-    for (int i = 1, x, y; i <= totN; ++i)
+    for (int i = 1, x, y; i < totN; ++i)
     {
         x = read();
         y = read();
@@ -114,5 +116,10 @@ int main()
         }
     }
     DFS(1, 0);
+    for (int i = 1; i <= 15; ++i)
+    {
+        totMIN = min(totMIN, DP[1][i]);
+    }
+    write(totMIN);
     return 0;
 } //Thomitics Code
