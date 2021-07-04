@@ -1,5 +1,12 @@
+/**************************************************************
+ * Problem: OJ ProID
+ * Author: 芊枫
+ * Date: 2021 Mon Date
+ * Algorithm: 
+**************************************************************/
 #include <bits/stdc++.h>
-#define INF 999999999
+#define INF 0x3f3f3f3f3f3f3f3f
+#define IINF 0x3f3f3f3f
 
 using namespace std;
 
