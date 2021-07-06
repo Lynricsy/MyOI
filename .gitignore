@@ -1,4 +1,7 @@
 ./.vscode
 .vscode
-./TEMP/practice.cpp
 ./TEMP/trashbin.cpp
+/TEMP/practice.cpp
+/TEMP/practice.exe
+/TEMP/trashbin.exe
+*.exe
