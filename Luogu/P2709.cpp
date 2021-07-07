@@ -1,8 +1,8 @@
 /**************************************************************
- * Problem: OJ ProID
+ * Problem: Luogu P2709
  * Author: 芊枫
- * Date: 2021 Mon Date
- * Algorithm: 
+ * Date: 2021 July 06
+ * Algorithm: 莫队
 **************************************************************/
 #include <bits/stdc++.h>
 #define INF 0x3f3f3f3f3f3f3f3f
@@ -55,36 +55,20 @@ void write(const long long &x)
 }
 
 const long long maxN = 100090;
-long long totN;
-long long totM;
-long long nums[maxN];
-long long nowANS;
-long long col[maxN];
-long long cnt[maxN];
 long long SIZE;
+long long inB(long long nowX)
+{
+    return nowX / SIZE;
+}
 struct Quest
 {
     long long l;
     long long r;
     long long ID;
 } quests[maxN];
-struct Ans
-{
-    long long up;
-    long long down;
-} fANS[maxN];
-
-bool operator<(const Quest &a, const Quest &b)
-{
-    if (a.l / SIZE != b.l / SIZE)
-    {
-        return a.l < b.l;
-    }
-    return (a.l / SIZE) & 1 ? a.r < b.r : a.r > b.r;
-}
-// bool operator<(const Quest &a, const Quest &b)
+// bool operator<(Quest a, Quest b)
 // {
-//     if (a.r == b.r)
+//     if (inB(a.l) != inB(b.l))
 //     {
 //         return a.l < b.l;
 //     }
@@ -93,25 +77,43 @@ bool operator<(const Quest &a, const Quest &b)
 //         return a.r < b.r;
 //     }
 // }
+bool operator<(const Quest &a, const Quest &b)
+{
+    if (inB(a.l) != inB(b.l))
+    {
+        return a.l < b.l;
+    }
+    return (inB(a.l)) & 1 ? a.r < b.r : a.r > b.r;
+}
+
+long long totN;
+long long totM;
+long long totK;
+long long nums[maxN];
+long long cnt[maxN];
+long long nowANS;
+long long ans[maxN];
+
 void add(long long nowX)
 {
-    nowANS += cnt[nowX];
+    nowANS += 2 * cnt[nowX] + 1;
     ++cnt[nowX];
 }
 void del(long long nowX)
 {
     --cnt[nowX];
-    nowANS -= cnt[nowX];
+    nowANS -= 2 * cnt[nowX] + 1;
 }
 
 int main()
 {
     totN = read();
     totM = read();
-    SIZE = (long long)(totN / sqrt((totM * 1.0) * 2 / 3));
+    totK = read();
+    SIZE = (long long)sqrt(totN);
     for (int i = 1; i <= totN; ++i)
     {
-        col[i] = read();
+        nums[i] = read();
     }
     for (int i = 1; i <= totM; ++i)
     {
@@ -120,48 +122,29 @@ int main()
         quests[i].ID = i;
     }
     sort(quests + 1, quests + totM + 1);
-    for (int i = 1, l = 1, r = 0; i <= totM; ++i)
+    for (long long i = 1, l = 1, r = 0; i <= totM; ++i)
     {
-        if (quests[i].l == quests[i].r)
-        {
-            fANS[quests[i].ID].up = 0;
-            fANS[quests[i].ID].down = 1;
-            continue;
-        }
         while (l > quests[i].l)
         {
-            add(col[--l]);
+            add(nums[--l]);
         }
         while (r < quests[i].r)
         {
-            add(col[++r]);
+            add(nums[++r]);
         }
         while (l < quests[i].l)
         {
-            del(col[l++]);
+            del(nums[l++]);
         }
         while (r > quests[i].r)
         {
-            del(col[r--]);
+            del(nums[r--]);
         }
-        fANS[quests[i].ID].up = nowANS;
-        fANS[quests[i].ID].down = (long long)(r - l + 1) * (r - l) / 2;
+        ans[quests[i].ID] = nowANS;
     }
     for (int i = 1; i <= totM; ++i)
     {
-        if (fANS[i].up)
-        {
-            long long nowG = __gcd(fANS[i].up, fANS[i].down);
-            fANS[i].up /= nowG;
-            fANS[i].down /= nowG;
-        }
-        else
-        {
-            fANS[i].down = 1;
-        }
-        write(fANS[i].up);
-        putchar('/');
-        write(fANS[i].down);
+        write(ans[i]);
         putchar('\n');
     }
     return 0;
