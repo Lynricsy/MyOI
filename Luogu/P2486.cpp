@@ -54,25 +54,27 @@ void write(const long long &x)
     }
 }
 
-const long long maxN = 1000090;
+const long long maxN = 90;
 long long totN;
 long long totM;
+long long col[maxN];
 long long totR;
-long long MOD;
-long long fath[maxN];
-long long siz[maxN];
-long long depth[maxN];
-long long Sson[maxN];
-long long ID[maxN];
-long long top[maxN];
-long long nums[maxN];
 long long num[maxN];
+long long nums[maxN];
+long long Sson[maxN];
+long long top[maxN];
+long long siz[maxN];
+long long ID[maxN];
+long long fath[maxN];
+long long depth[maxN];
 long long cntNODE;
+long long preL;
+long long preR;
 
 struct Edge
 {
-    long long nxt;
     long long to;
+    long long nxt;
 } edges[maxN];
 long long cnt_edges;
 long long head[maxN];
@@ -84,89 +86,11 @@ void add_edge(long long x, long long y)
     edges[cnt_edges].to = y;
 }
 
-struct Node
-{
-    long long l, r;
-    long long tag, val;
-    Node *lch, *rch;
-    inline void pushup()
-    {
-        val = lch->val + rch->val;
-    }
-    Node(long long L, long long R)
-    {
-        l = L;
-        r = R;
-        tag = 0;
-        if (l == r)
-        {
-            rch = lch = NULL;
-            val = num[l];
-            return;
-        }
-        long long Mid = (L + R) >> 1;
-        lch = new Node(L, Mid);
-        rch = new Node(Mid + 1, R);
-        pushup();
-    }
-    void maketag(long long w)
-    {
-        tag += w;
-        val += (r - l + 1) * w;
-        val %= MOD;
-    }
-    void pushdown()
-    {
-        if (!tag)
-        {
-            return;
-        }
-        lch->maketag(tag);
-        rch->maketag(tag);
-        tag = 0;
-    }
-    inline bool INrange(long long L, long long R)
-    {
-        return (L <= l) && (r <= R);
-    }
-    inline bool OUTrange(long long L, long long R)
-    {
-        return (l > R) || (L > r);
-    }
-    void update(long long L, long long R, long long w)
-    {
-        if (INrange(L, R))
-        {
-            maketag(w);
-        }
-        else if (!OUTrange(L, R))
-        {
-            pushdown();
-            lch->update(L, R, w);
-            rch->update(L, R, w);
-            pushup();
-        }
-    }
-    long long query(long long L, long long R)
-    {
-        if (INrange(L, R))
-        {
-            return val;
-        }
-        else if (OUTrange(L, R))
-        {
-            return 0;
-        }
-        pushdown();
-        return (lch->query(L, R) + rch->query(L, R)) % MOD;
-    }
-};
-
 void DFS1(long long x, long long fa, long long dep)
 {
-    fath[x] = fa;
-    depth[x] = dep;
     long long max = -1;
+    depth[x] = dep;
+    fath[x] = fa;
     siz[x] = 1;
     for (int i = head[x]; i; i = edges[i].nxt)
     {
@@ -184,12 +108,13 @@ void DFS1(long long x, long long fa, long long dep)
         }
     }
 }
+
 void DFS2(long long x, long long nowTOP)
 {
     ++cntNODE;
     ID[x] = cntNODE;
-    num[cntNODE] = nums[x];
     top[x] = nowTOP;
+    // num[cntNODE] = x;
     if (!Sson[x])
     {
         return;
@@ -198,7 +123,7 @@ void DFS2(long long x, long long nowTOP)
     for (int i = head[x]; i; i = edges[i].nxt)
     {
         long long vir = edges[i].to;
-        if (vir == fath[x] || vir == Sson[x])
+        if (vir == Sson[x] || vir == fath[x])
         {
             continue;
         }
@@ -206,10 +131,141 @@ void DFS2(long long x, long long nowTOP)
     }
 }
 
+struct Node
+{
+    long long l, r;
+    long long val;
+    long long rcol, lcol;
+    long long tag;
+    Node *lch, *rch;
+    void pushup()
+    {
+        val = lch->val + rch->val;
+        if (lch->rcol == rch->lcol)
+        {
+            --val;
+        }
+        lcol = lch->lcol;
+        rcol = rch->rcol;
+    }
+    Node(long long L, long long R)
+    {
+        l = L;
+        r = R;
+        tag = 0;
+        if (l == r)
+        {
+            rcol = lcol = col[ID[l]];
+            val = 1;
+            lch = rch = NULL;
+            return;
+        }
+        long long Mid = (L + R) >> 1;
+        lch = new Node(L, Mid);
+        rch = new Node(Mid + 1, R);
+        pushup();
+    }
+    inline void maketag()
+    {
+        tag = 1;
+        val = 1;
+    }
+    void pushdown()
+    {
+        if (tag)
+        {
+            val = 1;
+            lch->maketag();
+            rch->maketag();
+            lch->lcol = lch->rcol = rch->lcol = lch->rcol = lcol;
+            tag = 0;
+        }
+    }
+    inline bool INrange(long long L, long long R)
+    {
+        return (L <= l) && (r <= R);
+    }
+    inline bool OUTrange(long long L, long long R)
+    {
+        return (l > R) || (L > r);
+    }
+    void update(long long L, long long R, long long w)
+    {
+        if (INrange(L, R))
+        {
+            maketag();
+            lcol = rcol = w;
+        }
+        else if (!OUTrange(L, R))
+        {
+            pushdown();
+            lch->update(L, R, w);
+            rch->update(L, R, w);
+            pushup();
+        }
+    }
+    long long query(long long L, long long R)
+    {
+        if (L == l)
+        {
+            preL = lcol;
+        }
+        if (R == r)
+        {
+            preR = rcol;
+        }
+        if (INrange(L, R))
+        {
+            return val;
+        }
+        else if (OUTrange(L, R))
+        {
+            return 0;
+        }
+        pushdown();
+        if (R <= lch->r)
+        {
+            return lch->query(L, R);
+        }
+        else if (L >= rch->l)
+        {
+            return rch->query(L, R);
+        }
+        if (lch->rcol == rch->lcol)
+        {
+            return lch->query(L, R) + rch->query(L, R) - 1;
+        }
+        else
+        {
+            return lch->query(L, R) + rch->query(L, R);
+        }
+    }
+    long long fid(long long w)
+    {
+        if (l == r)
+        {
+            return lcol;
+        }
+        if (tag)
+        {
+            pushdown();
+        }
+        if (w <= lch->l)
+        {
+            return lch->fid(w);
+        }
+        else
+        {
+            return rch->fid(w);
+        }
+    }
+};
+
 Node *rot;
 
 long long qRANGE(long long x, long long y)
 {
+    long long ansL = -1, ansR = -1;
     long long nowANS = 0;
     while (top[x] != top[y])
     {
@@ -218,23 +274,37 @@ long long qRANGE(long long x, long long y)
             swap(x, y);
         }
         nowANS += rot->query(ID[top[x]], ID[x]);
+
+        // if (preR == ansL)
+        // {
+        //     --nowANS;
+        // }
         x = fath[top[x]];
+        if (rot->fid(ID[top[x]]) == rot->fid(ID[fath[top[x]]]))
+        {
+            --nowANS;
+        }
+
+        // ansL = preL;
     }
-    if (depth[x] > depth[y])
+    if (depth[x] < depth[y])
     {
         swap(x, y);
+        swap(ansL, ansR);
     }
-    nowANS += rot->query(ID[x], ID[y]);
-    return nowANS % MOD;
+    nowANS += rot->query(ID[y], ID[x]);
+    // if (preL == ansR)
+    // {
+    //     --nowANS;
+    // }
+    // if (preR == ansL)
+    // {
+    //     --nowANS;
+    // }
+    return nowANS;
 }
-long long qTREE(long long x)
-{
-    return rot->query(ID[x], ID[x] + siz[x] - 1) % MOD;
-}
-
 void updRANGE(long long x, long long y, long long k)
 {
-    long long nowANS = 0;
     while (top[x] != top[y])
     {
         if (depth[top[x]] < depth[top[y]])
@@ -250,20 +320,14 @@ void updRANGE(long long x, long long y, long long k)
     }
     rot->update(ID[x], ID[y], k);
 }
-void updTREE(long long x, long long k)
-{
-    rot->update(ID[x], ID[x] + siz[x] - 1, k);
-}
 
 int main()
 {
     totN = read();
     totM = read();
-    totR = read();
-    MOD = read();
     for (int i = 1; i <= totN; ++i)
     {
-        nums[i] = read() % MOD;
+        col[i] = read();
     }
     for (int i = 1, x, y; i < totN; ++i)
     {
@@ -272,39 +336,32 @@ int main()
         add_edge(x, y);
         add_edge(y, x);
     }
-    DFS1(totR, 0, 1);
-    DFS2(totR, totR);
+    char ch = getchar();
+    DFS1(1, 1, 1);
+    DFS2(1, 1);
     rot = new Node(1, totN);
     for (int i = 1; i <= totM; ++i)
     {
-        short tmp = read();
-        long long x, y, z;
-        if (tmp == 1)
+        long long a, b, c;
+        while (ch != 'Q' && ch != 'C')
         {
-            x = read();
-            y = read();
-            z = read() % MOD;
-            updRANGE(x, y, z);
+            ch = getchar();
         }
-        else if (tmp == 2)
+        if (ch == 'Q')
         {
-            x = read();
-            y = read();
-            write(qRANGE(x, y) % MOD);
+            a = read();
+            b = read();
+            write(qRANGE(a, b));
             putchar('\n');
-        }
-        else if (tmp == 3)
-        {
-            x = read();
-            z = read() % MOD;
-            updTREE(x, z);
         }
         else
         {
-            x = read();
-            write(qTREE(x) % MOD);
-            putchar('\n');
+            a = read();
+            b = read();
+            c = read();
+            updRANGE(a, b, c);
         }
+        ch = getchar();
     }
     return 0;
 } //Thomitics Code

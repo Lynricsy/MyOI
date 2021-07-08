@@ -54,7 +54,7 @@ void write(const long long &x)
 	}
 }
 
-const long long maxN = 100090;
+const long long maxN = 1000090;
 long long totN;
 long long totM;
 long long totZ;
@@ -184,24 +184,24 @@ int main()
 	{
 		A[i] = read();
 	}
+	sort(A + 1, A + totN + 1);
 	for (int i = 1; i <= totM; ++i)
 	{
 		B[i] = read();
 	}
-	sort(B + 1, B + totM + 1);
 	totQ = read();
 	for (int i = 1; i <= totQ; ++i)
 	{
 		query[i].l = read();
 		query[i].r = read();
-		query[i].ID = read();
+		query[i].ID = i;
 	}
 	sort(query + 1, query + totQ + 1);
 	for (int i = 1; i <= totM; ++i)
 	{
-		MAX[i] = upper_bound(A + 1, A + totN + 1, B[i]) - A - 1;
+		MAX[i] = upper_bound(A + 1, A + totN + 1, totZ - B[i]) - A - 1;
 	}
-	rot = new Node(1, totN);
+	rot = new Node(1, totM);
 	for (int i = 1, l = 1, r = 0; i <= totQ; ++i)
 	{
 		while (l > query[i].l)
@@ -214,13 +214,13 @@ int main()
 		}
 		while (l < query[i].l)
 		{
-			add(l++);
+			del(l++);
 		}
 		while (r > query[i].r)
 		{
 			del(r--);
 		}
-		ANS[query[i].ID] = rot->query(1, totM);
+		ANS[query[i].ID] = rot->query(1, totM) - 1;
 	}
 	for (int i = 1; i <= totQ; ++i)
 	{
